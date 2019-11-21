@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hachaton_2019", "Hachaton_2019\Hachaton_2019.vcxproj", "{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Debug|x64.ActiveCfg = Debug|x64
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Debug|x64.Build.0 = Debug|x64
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Debug|x86.ActiveCfg = Debug|Win32
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Debug|x86.Build.0 = Debug|Win32
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Release|x64.ActiveCfg = Release|x64
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Release|x64.Build.0 = Release|x64
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Release|x86.ActiveCfg = Release|Win32
+		{FA002E94-DF44-4E0A-A1B4-4C3D68F07825}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C5EEDEC-F884-48D9-894F-A5B91545B76B}
+	EndGlobalSection
+EndGlobal
