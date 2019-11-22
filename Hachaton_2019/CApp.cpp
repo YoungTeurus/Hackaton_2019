@@ -3,6 +3,7 @@
 
 //==============================================================================
 CApp::CApp() {
+	Wind_Display = NULL;
     Surf_Display = NULL;
 
     Running = true;
@@ -23,6 +24,7 @@ int CApp::OnExecute() {
 
         OnLoop();
         OnRender();
+		SDL_Delay(10); // Задержка перед циклом, чтобы ЦП не убивался
     }
 
     OnCleanup();
