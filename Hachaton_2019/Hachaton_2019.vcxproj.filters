@@ -72,10 +72,13 @@
     <Image Include="123.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\Desktop\BackMenu.png">
+    <Image Include="Buttoms.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\Desktop\Buttoms.png">
+    <Image Include="BackMenu.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Desktop\BackMenu.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

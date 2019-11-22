@@ -168,8 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Desktop\BackMenu.png" />
-    <Image Include="..\..\..\..\..\Desktop\Buttoms.png" />
     <Image Include="123.jpg" />
+    <Image Include="BackMenu.png" />
+    <Image Include="Buttoms.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
