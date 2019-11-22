@@ -167,6 +167,8 @@
     <ResourceCompile Include="Hachaton_2019.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\Desktop\BackMenu.png" />
+    <Image Include="..\..\..\..\..\Desktop\Buttoms.png" />
     <Image Include="123.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
