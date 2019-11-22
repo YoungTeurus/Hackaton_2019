@@ -15,8 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="The_Test.cpp">
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnCleanup.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnEvent.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnInit.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnLoop.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnRender.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
