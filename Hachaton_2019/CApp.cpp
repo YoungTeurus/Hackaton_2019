@@ -1,11 +1,13 @@
 //==============================================================================
 #include "CApp.h"
+#include "Game.h"
 
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
     Surf_Display = NULL;
 
+	game = NULL;
     Running = true;
 }
 
@@ -19,11 +21,11 @@ int CApp::OnExecute() {
 
     while(Running) {
         while(SDL_PollEvent(&Event)) {
-            OnEvent(&Event);
+            OnEvent(&Event); //тут передаем все изменения от игрока
         }
 
-        OnLoop();
-        OnRender();
+        OnLoop();//в этой штуке забираем от game все изменения и меняем картинку
+        OnRender(); //рисуем уже готовую картинку
 		SDL_Delay(10); // Задержка перед циклом, чтобы ЦП не убивался
     }
 

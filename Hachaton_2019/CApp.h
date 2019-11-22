@@ -5,6 +5,7 @@
     #define _CAPP_H_
 
 #include <SDL.h>
+#include "Game.h"
 
 //==============================================================================
 class CApp {
@@ -14,6 +15,9 @@ class CApp {
         SDL_Surface*    Surf_Display;
 
 		SDL_Window*     Wind_Display;
+
+		Game* game;
+		
 
     public:
         CApp();
