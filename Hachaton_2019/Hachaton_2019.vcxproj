@@ -143,18 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp.cpp" />
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnCleanup.cpp" />
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnEvent.cpp" />
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnInit.cpp" />
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnLoop.cpp" />
-    <ClCompile Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp_OnRender.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Users\админ\Desktop\SDL Tutorial 1\CApp.h" />
+    <ClCompile Include="CApp.cpp" />
+    <ClCompile Include="CApp_OnCleanup.cpp" />
+    <ClCompile Include="CApp_OnEvent.cpp" />
+    <ClCompile Include="CApp_OnInit.cpp" />
+    <ClCompile Include="CApp_OnLoop.cpp" />
+    <ClCompile Include="CApp_OnRender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
