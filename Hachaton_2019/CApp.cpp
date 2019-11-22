@@ -4,7 +4,8 @@
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
-    Surf_Display = NULL;
+	IMG = NULL;
+
 
     Running = true;
 }
