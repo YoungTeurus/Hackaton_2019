@@ -7,6 +7,7 @@ bool CApp::OnInit() {
         return false;
     }	
 
+
 	if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) == 0)
 	{
 		return false;
