@@ -5,7 +5,7 @@ AnimationTexture::AnimationTexture()
 	texture = nullptr;
 }
 
-//maxlent - сколько анимаций в картинке хранится вообще
+//maxlent - сколько анимаций(дорожек) в картинке хранится вообще
 AnimationTexture::AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent)
 {
 	texture = picter;
