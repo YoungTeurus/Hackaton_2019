@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationTexture.cpp" />
     <ClCompile Include="CApp.cpp" />
     <ClCompile Include="CApp_OnCleanup.cpp" />
     <ClCompile Include="CApp_OnEvent.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="WindowSize.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationTexture.h" />
     <ClInclude Include="CApp.h" />
     <ClInclude Include="CSurface.h" />
     <ClInclude Include="Game.h" />

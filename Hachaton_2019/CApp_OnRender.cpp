@@ -9,10 +9,10 @@ void CApp::OnRender() {
 	}
 	else // иначе отрисуем все картиночки из game
 	{
-		texturePlayer.DrawTexture(Renderer_Display);
+		texturePlayer.DrawAnimationTexture(Renderer_Display);
 	}
 	SDL_RenderPresent(Renderer_Display);
-	SDL_RenderClear(Renderer_Display);
+	
 }
 
 //==============================================================================

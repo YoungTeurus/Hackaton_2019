@@ -29,13 +29,25 @@ int CApp::OnExecute() {
 		board = SDL_GetKeyboardState(NULL);
 
 		if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
+		{
 			game->get_player_1()->move(0);
+			texturePlayer.SetAnimationDoroshka(1);
+		}
 		if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
-			game->get_player_1()->move(1);
-		if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
+		{
 			game->get_player_1()->move(2);
-		if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
+			texturePlayer.SetAnimationDoroshka(3);
+		}
+		if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
+		{
 			game->get_player_1()->move(3);
+			texturePlayer.SetAnimationDoroshka(2);
+		}
+		if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
+		{
+			game->get_player_1()->move(1);
+			texturePlayer.SetAnimationDoroshka(4);
+		}
         while(SDL_PollEvent(&Event)) {
             OnEvent(&Event); //тут передаем все изменения от игрока
         }
@@ -43,6 +55,7 @@ int CApp::OnExecute() {
         OnLoop();//в этой штуке забираем от game все изменения и меняем картинку
         OnRender(); //рисуем уже готовую картинку
 		SDL_Delay(10); // Задержка перед циклом, чтобы ЦП не убивался
+		SDL_RenderClear(Renderer_Display);
     }
 
     OnCleanup();

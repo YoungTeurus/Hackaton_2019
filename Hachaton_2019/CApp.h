@@ -11,6 +11,7 @@
 #include "Menu.h"
 #include "Windowr.h"
 #include <Windows.h>
+#include "AnimationTexture.h"
 
 //==============================================================================
 class CApp {
@@ -38,8 +39,9 @@ class CApp {
 
 		//хранит фаил с картинкой
 		SDL_Texture* picturePlayer;
+		SDL_Texture* AnimPicturePlayer;
 		//сама текстурка игрока с размерами и положением
-		Texture texturePlayer;
+		AnimationTexture texturePlayer;
 
 		int IsWhat = 0;
 
