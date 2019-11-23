@@ -12,7 +12,7 @@ bool CApp::OnInit() {
 		return false;
 	}
 
-    if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0) ) == NULL) {
+    if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WEIGHT, SCREEN_HEIGHT, 0) ) == NULL) {
         return false;
     }
 	Renderer_Display = SDL_CreateRenderer(Wind_Display, -1, 0);

@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="CApp.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -100,12 +97,6 @@
     </ClInclude>
     <ClInclude Include="CSurface.h">
       <Filter>Исходные файлы\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="GameRoom.h">
-      <Filter>Исходные файлы\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomTemplates.h">
-      <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

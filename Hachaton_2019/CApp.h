@@ -9,6 +9,7 @@
 #include <SDL_image.h>
 #include "CSurface.h"
 #include "Menu.h"
+#include "Windowr.h"
 
 //==============================================================================
 class CApp {
