@@ -14,15 +14,10 @@ bool CApp::OnInit() {
     if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0) ) == NULL) {
         return false;
     }
-
-	if ((IMG = CSurface::OnLoad("123.jpg")) == NULL)
-	{
-		return false;
-	}
 	Renderer_Display = SDL_CreateRenderer(Wind_Display, -1, 0);
 
 
-	menu = Menu(Renderer_Display);
+	menu = Menu(Wind_Display, Renderer_Display);
 
     return true;
 }

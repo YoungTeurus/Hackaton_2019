@@ -4,7 +4,6 @@
 //==============================================================================
 void CApp::OnCleanup() {
 	SDL_RenderClear(Renderer_Display);
-	SDL_FreeSurface(IMG);
     SDL_Quit();
 }
 

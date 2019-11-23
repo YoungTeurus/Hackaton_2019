@@ -4,8 +4,7 @@
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
-	IMG = NULL;
-
+	menu = Menu();
 
     Running = true;
 }

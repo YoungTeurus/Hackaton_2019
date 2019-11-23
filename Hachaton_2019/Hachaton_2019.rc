@@ -59,11 +59,8 @@ IDR_PICTER1             picter                  "123.jpg"
 // PNG
 //
 
-IDB_PNG1                PNG                     "C:\\Users\\pshbl\\Desktop\\BackMenu.png"
-
 IDB_PNG2                PNG                     "Buttoms.png"
 
-IDB_PNG3                PNG                     "BackMenu.png"
 
 #endif    // Русский (Россия) resources
 /////////////////////////////////////////////////////////////////////////////

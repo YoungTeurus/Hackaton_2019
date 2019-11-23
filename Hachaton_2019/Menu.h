@@ -1,12 +1,15 @@
 #pragma once
 
 #include <SDL.h>
-#include "CApp.h"
+#include "Texture.h"
+#include "CSurface.h"
+#include "WindowSize.h"
 
 class Menu
 {
 public:
-	Menu(SDL_Renderer* ren);
+	Menu();
+	Menu(SDL_Window* win, SDL_Renderer* ren);
 	~Menu();
 
 	bool Render(SDL_Renderer* ren);
@@ -15,14 +18,13 @@ public:
 
 
 private:
-	SDL_Rect* start_buttom;
-	SDL_Rect* settings_buttom;
-	SDL_Rect* exit_buttom;
-	SDL_Surface* start_buttom_sur;
-	SDL_Surface* settings_buttom_sur;
-	SDL_Surface* exit_buttom_sur;
+	SDL_Texture* TileMenu;
+	SDL_Texture* BackP;
+	Texture start;
+	Texture exit;
+	Texture settings;
+	Texture Back;
 
-
-	void Init(SDL_Renderer* ren);
+	void Init(SDL_Window* win,SDL_Renderer* ren);
 };
 
