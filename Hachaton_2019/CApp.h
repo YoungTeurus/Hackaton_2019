@@ -13,14 +13,31 @@
 //==============================================================================
 class CApp {
     private:
+		//иниц всего для окошка
         bool            Running;
 
+		SDL_Window*		Wind_Display;
 		SDL_Renderer* Renderer_Display;
+		//иниц менюшку
+		Menu			menu;
+		//иниц игры
+		Game*			game;
+		
+		bool			menuOn;
+		bool			gameOn;
 
-		SDL_Window*     Wind_Display;
+		// описание текстур, которые используются в отрисовки игры
+		// дальше их нужно проинициализировать в onInit
 
-		Game* game;
-		Menu menu;
+		// каждый цикл: обновить их координаты, размеры , анимки в onLoop
+		// и отрисовать в onrender
+		// когда выходим из програмки обязательно их удаляем 
+
+		//хранит фаил с картинкой
+		SDL_Texture* picturePlayer;
+		//сама текстурка игрока с размерами и положением
+		Texture texturePlayer;
+
 
     public:
         CApp();

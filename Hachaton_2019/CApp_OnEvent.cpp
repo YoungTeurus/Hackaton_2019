@@ -26,8 +26,9 @@ void CApp::OnEvent(SDL_Event* Event)
 	default:
 		break;
 	}
-	if (true)//если игра началась тут какое-то событие
+	if (menuOn && !gameOn)//если игра началась тут какое-то событие
 	{
+		gameOn = true;
 		game = new Game();//иниц игровую логику
 	}
 }
