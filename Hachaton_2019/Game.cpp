@@ -7,7 +7,7 @@ Game::Game()
 
 	active_room = nullptr;
 
-	current_enemies = nullptr;
+	current_actors = nullptr;
 
 	current_objects = nullptr;
 }
@@ -15,6 +15,6 @@ Game::Game()
 void Game::load_test_room()
 {
 	active_room = new GameRoom(1, 1, 0);
-	current_enemies = active_room->get_actors();
+	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();
 }

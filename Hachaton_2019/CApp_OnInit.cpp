@@ -13,6 +13,7 @@ bool CApp::OnInit() {
 		return false;
 	}
 
+	// Создаём окно
     if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WEIGHT, SCREEN_HEIGHT, 0) ) == NULL) {
         return false;
     }

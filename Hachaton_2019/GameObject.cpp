@@ -70,6 +70,16 @@ SDL_Point* GameObject::getCoord()
 	return new SDL_Point{ object_rect->x, object_rect->y };
 }
 
+SDL_Point* GameObject::get_size()
+{
+	return new SDL_Point{ object_rect->w, object_rect->h };
+}
+
+SDL_Rect* GameObject::get_object_rect()
+{
+	return object_rect;
+}
+
 void GameObject::setCoord(SDL_Point* pnt)
 {
 	object_rect->x = pnt->x;

@@ -24,7 +24,9 @@ class CApp {
 		Menu			menu;
 		//иниц игры
 		Game*			game;
-		const Uint8* board;
+
+		// Массив для работы с клавиатурой (см. )
+		const Uint8*	board;
 		
 		bool			menuOn;
 		bool			gameOn;
@@ -41,7 +43,7 @@ class CApp {
 		//сама текстурка игрока с размерами и положением
 		Texture texturePlayer;
 
-		int IsWhat = 0;
+		int MenuState = 0; // Состояние меню: 0 - ничего не нажато, 1-3 - нажаты кнопки с первой по третью
 
     public:
         CApp();

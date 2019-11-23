@@ -98,5 +98,17 @@
     <ClInclude Include="CSurface.h">
       <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="Windowr.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRoom.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomTemplates.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

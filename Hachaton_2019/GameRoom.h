@@ -22,8 +22,9 @@ public:
 
 	//*******Get-еры*********//
 	int			get_i();				// Возвращает поле i
-
 	int			get_j();				// Возвращает поле j
+
+	SDL_Point*	get_size();				// Возвращает размеры комнаты
 
 	std::vector<GameObject*>* get_objects();// Возвращает массив объектов 
 	std::vector<GameActor*>* get_actors();// Возвращает массив объектов 
@@ -37,6 +38,8 @@ public:
 
 private:
 	int			map_i, map_j;			// Индексы комнаты на глобальной Map
+
+	SDL_Point*	size;					// Размеры комнаты
 
 	std::vector<GameObject*>* objects;	// Массив объектов
 	std::vector<GameActor*>* actors;	// Массив персонажей
