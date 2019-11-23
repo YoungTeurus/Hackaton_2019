@@ -53,6 +53,7 @@ bool GameObject::move(double delX, double delY)
 
 	// Проверяем на коллижены
 	// Если с чем-то столкнулись, то возвращаемся обратно
+	auto collision_result = 
 
 	// Считаем, что увеличение X - движение вправо
 	if (delX >= 0)
