@@ -12,9 +12,9 @@ public:
 	Menu(SDL_Window* win, SDL_Renderer* ren);
 	~Menu();
 
-	bool Render(SDL_Renderer* ren);
+	void Render(SDL_Renderer* ren);
 
-	void Update(SDL_Event *Event, SDL_Renderer* ren);
+	int Update(SDL_Event *Event, SDL_Renderer* ren);
 
 
 private:

@@ -4,19 +4,18 @@
 //==============================================================================
 void CApp::OnRender() {
 
-	menu.Render(Renderer_Display);
+
+	switch (IsWhat)
+	{
+	case 0: menu.Render(Renderer_Display); break;
+	case 1:
+	case 2:
+	case 3: Running = false; break;
+	default:
+		break;
+	}
 	
 	SDL_RenderPresent(Renderer_Display);
-
-	/*
-	if (true)//если игра началась
-	{
-
-	}
-	if (true)//мама мы в менюшке
-	{
-	}
-	*/
 }
 
 //==============================================================================

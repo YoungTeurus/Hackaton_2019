@@ -9,18 +9,20 @@
 #include <SDL_image.h>
 #include "CSurface.h"
 #include "Menu.h"
+#include "Windowr.h"
 
 //==============================================================================
 class CApp {
     private:
         bool            Running;
 
-		SDL_Renderer* Renderer_Display;
+		SDL_Renderer*	Renderer_Display;
 
 		SDL_Window*     Wind_Display;
 
-		Game* game;
-		Menu menu;
+		Game*			game;
+		Menu			menu;
+		int				IsWhat;
 
     public:
         CApp();

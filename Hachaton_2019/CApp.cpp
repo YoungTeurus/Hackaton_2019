@@ -10,6 +10,8 @@ CApp::CApp() {
 	menu = Menu();
 	game = NULL;
 
+	IsWhat = 0;
+
     Running = true;
 }
 

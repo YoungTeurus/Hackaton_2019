@@ -12,11 +12,11 @@ public:
 
 	~Texture();
     SDL_Rect InGame;
-
+	SDL_Rect InPicter;
 
 	void DrawTexture(SDL_Renderer* ren);
 private:
 	SDL_Texture* _texture;
-	SDL_Rect InPicter;
+
 };
 
