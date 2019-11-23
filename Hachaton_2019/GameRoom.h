@@ -1,33 +1,45 @@
-#include <SDL.h>
-#include "GameObject.h"
+п»ї#include "GameObject.h"
 #include "GameActor.h"
+#include "RoomTemplates.h"
 #include <vector>
 #pragma once
 
-// Класс комнаты
+// РљР»Р°СЃСЃ РєРѕРјРЅР°С‚С‹
 
-// Здесь мы должны иметь массивы objects и enemies
+// Р—РґРµСЃСЊ РјС‹ РґРѕР»Р¶РЅС‹ РёРјРµС‚СЊ РјР°СЃСЃРёРІС‹ objects Рё enemies
 
 class GameRoom {
 public:
-	GameRoom(int i, int j,	// Конструктор комнаты по массивам объектов и персонажей
+	GameRoom(int i, int j,	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРјРЅР°С‚С‹ РїРѕ РјР°СЃСЃРёРІР°Рј РѕР±СЉРµРєС‚РѕРІ Рё РїРµСЂСЃРѕРЅР°Р¶РµР№
 		std::vector<GameObject*>* = nullptr,
 		std::vector<GameActor*>* = nullptr);
 
-	GameRoom(int i, int j,	// Конструктор комнаты по номеру "template"
+	GameRoom(int i, int j,	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРјРЅР°С‚С‹ РїРѕ РЅРѕРјРµСЂСѓ "template"
 		int room_template);
 
-	void		add_object(GameObject*);// Добавляет объект 
-	void		add_actor(GameActor*);	// Добавляет персонажа
+	void		add_object(GameObject*);// Р”РѕР±Р°РІР»СЏРµС‚ РѕР±СЉРµРєС‚ 
+	void		add_actor(GameActor*);	// Р”РѕР±Р°РІР»СЏРµС‚ РїРµСЂСЃРѕРЅР°Р¶Р°
 
-	int get_i();
-	int get_j();
+	//*******Get-РµСЂС‹*********//
+	int			get_i();				// Р’РѕР·РІСЂР°С‰Р°РµС‚ РїРѕР»Рµ i
 
-	void set_i(int i);
-	void set_j(int j);
+	int			get_j();				// Р’РѕР·РІСЂР°С‰Р°РµС‚ РїРѕР»Рµ j
+
+	std::vector<GameObject*>* get_objects();// Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ 
+	std::vector<GameActor*>* get_actors();// Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ 
+	//***********************//
+
+	//*******Set-РµСЂС‹*********//
+	void		set_i(int i);			// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїРѕР»Рµ i
+	void		set_j(int j);			// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїРѕР»Рµ j
+
+	//***********************//
+
 private:
-	int			map_i, map_j;			// Индексы комнаты на глобальной Map
+	int			map_i, map_j;			// РРЅРґРµРєСЃС‹ РєРѕРјРЅР°С‚С‹ РЅР° РіР»РѕР±Р°Р»СЊРЅРѕР№ Map
 
-	std::vector<GameObject*>* objects;	// Массив объектов
-	std::vector<GameActor*>* actors;	// Массив персонажей
+	std::vector<GameObject*>* objects;	// РњР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ
+	std::vector<GameActor*>* actors;	// РњР°СЃСЃРёРІ РїРµСЂСЃРѕРЅР°Р¶РµР№
+
+	RoomTemplates* room_templates = new RoomTemplates();
 };

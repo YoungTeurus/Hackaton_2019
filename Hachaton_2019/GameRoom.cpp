@@ -1,8 +1,9 @@
-#include "GameRoom.h"
+п»ї#include "GameRoom.h"
+#include <iostream>
 
 using namespace std;
 
-GameRoom::GameRoom(int i, int j,	// Конструктор комнаты
+GameRoom::GameRoom(int i, int j,	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРјРЅР°С‚С‹
 	vector<GameObject*>* start_objects,
 	vector<GameActor*>*	start_actors)
 {
@@ -23,9 +24,14 @@ GameRoom::GameRoom(int i, int j,
 	map_i = i;
 	map_j = j;
 
-	// Загружаем "template" комнаты откуда-то
-	// objects = RoomTemplates[room_template]->objects;
-	// actors = RoomTemplates[room_template]->actors;
+	// Р—Р°РіСЂСѓР¶Р°РµРј "template" РєРѕРјРЅР°С‚С‹ РёР· РѕРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ RoomTemplate
+	objects = room_templates->get_obj_vector(room_template);
+	actors = room_templates->get_act_vector(room_template);
+
+	// Р•СЃР»Рё 
+	if (!(objects) || !(actors)) {
+		std::cout << "РќРµ Р±С‹Р» РЅР°Р№РґРµРЅ РїРѕРґС…РѕРґСЏС‰РёР№ template";
+	}
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
@@ -44,6 +50,16 @@ int GameRoom::get_i()
 int GameRoom::get_j()
 {
 	return map_j;
+}
+
+std::vector<GameObject*>* GameRoom::get_objects()
+{
+	return objects;
+}
+
+std::vector<GameActor*>* GameRoom::get_actors()
+{
+	return actors;
 }
 
 void GameRoom::set_i(int i)

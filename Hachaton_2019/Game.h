@@ -2,6 +2,7 @@
 
 #include "GameActor.h"
 #include "GameObject.h"
+#include "GameRoom.h"
 
 class Game
 {
@@ -15,6 +16,8 @@ public:
 	int				check_all_collisions_with(GameObject* other_object);
 	// TO-DO: Коллизии!
 	
+	void			load_test_room();						// Загружает тестовую комнату в active_room
+
 	//*******Get-еры*********//
 	GameActor*		get_player_1() { return player_1; }		// Возвращает первого игрока
 	//***********************//
@@ -23,7 +26,7 @@ public:
 
 	//***********************//
 private:
-	GameActor* player_1;
+	GameActor*		player_1;
 
 	// Текущая структура:
 	// Map хранит матрицу Room-ов, каждая из которых имеет list enemies и list objects.
@@ -37,9 +40,9 @@ private:
 
 	//Map* map; // Указатель на карту подземелья
 
-	//Room* active_room; // Указатель на активную комнату
+	GameRoom*		active_room;							// Указатель на активную комнату
 
-	//list<GameActor *>* current_enemies; // Указатель на список врагов в данной (активной) комнате
+	vector<GameActor*>*  current_enemies;					// Указатель на список врагов в данной (активной) комнате
 
-	//list<GameObject *>* current_objects; // Указатель на список объектов в данной (активной) комнате
+	vector<GameObject*>* current_objects;					// Указатель на список объектов в данной (активной) комнате
 };
