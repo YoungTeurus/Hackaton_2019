@@ -2,13 +2,15 @@
 
 
 GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
-	int start_lvl, int start_hp, int start_mp, int start_dmg, bool start_is_looking_right) :
+	int start_lvl, int start_hp, int start_mp, int start_dmg, bool start_is_looking_right, int start_type) :
 	GameObject(spawn_point, // Вызываю конструктор родителя, передаю ему все необходимые данные
 				width,height,
 				start_is_looking_right,
 				true,	 // bool start_is_rotatable, 
 				false,	 // bool start_is_passable,
-				false)	 // bool start_is_pushable
+				false,	 // bool start_is_pushable
+				start_type
+		)
 {
 	// Осталось установить лишь свойства, характерные Actor-у
 	lvl = start_lvl;

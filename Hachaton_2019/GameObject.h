@@ -4,7 +4,7 @@
 class GameObject
 {
 public:
-	GameObject(); // Конструктор по умолчанию
+	// GameObject(); // Конструктор по умолчанию
 
 	GameObject(
 		SDL_Point* spawn_point, // Точка спавна
@@ -12,8 +12,9 @@ public:
 		int height, // высота модельки
 		bool start_is_looking_right, // В какую сторону объект смотрит изначально (см. ниже)
 		bool start_is_rotatable, // Нужно ли отражать текстуру объекта
-		bool start_is_passable,
-		bool start_is_pushable
+		bool start_is_passable, // Можно ли пройти сквозь объект
+		bool start_is_pushable, // Можно ли толкать объект
+		int start_type // Тип объекта, если нужен
 	);
 
 	//*Управление состоянием*//
@@ -36,7 +37,12 @@ public:
 
 private:
 
-	int type; //Ун
+	int				type;					//Уникальный тип объекта, требуемый для различения объектов, их отрисовки и всего в этом духе
+	// Список всех типов:
+	// 0 - универсальный объект
+	// 1 - первый игрок
+	// 2 - второй игрок
+	// 3 - враг
 
 	void			convert_pos();			// Переводим real-ую позицию объекта к ближайшим int-ам для coord
 

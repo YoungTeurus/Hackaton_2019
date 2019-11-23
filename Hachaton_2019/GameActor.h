@@ -15,7 +15,8 @@ public:
 		int start_hp, // Начальные ХП
 		int start_mp, // Начальные МП
 		int start_dmg, // Начальный dmg
-		bool start_is_looking_right // В какую сторону игрок смотрит изначально (см. ниже)
+		bool start_is_looking_right, // В какую сторону игрок смотрит изначально (см. ниже)
+		int start_type // Тип персонажа
 		);
 
 	//*Управление состоянием*//
