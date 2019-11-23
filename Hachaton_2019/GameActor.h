@@ -2,7 +2,7 @@
 #include "SDL.h"
 #include "GameObject.h"
 
-class GameActor: private GameObject
+class GameActor: public GameObject
 {
 public:
 	// GameActor(); // Конструктор по умолчанию

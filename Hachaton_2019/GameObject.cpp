@@ -54,7 +54,7 @@ bool GameObject::move(double delX, double delY)
 
 	convert_pos();
 
-	return true;;
+	return true;
 }
 
 bool GameObject::on_colision(SDL_Rect* second_rect)

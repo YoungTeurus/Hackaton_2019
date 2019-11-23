@@ -13,14 +13,27 @@
 //==============================================================================
 class CApp {
     private:
+		//иниц всего для окошка
         bool            Running;
 
-		SDL_Renderer* Renderer_Display;
+		SDL_Window*		Wind_Display;
+		//иниц менюшку
+		Menu			menu;
+		//иниц игры
+		Game*			game;
+		
+		bool			menuOn;
 
-		SDL_Window*     Wind_Display;
+		bool			gameOn;
 
-		Game* game;
-		Menu menu;
+		//
+		SDL_Texture* picturePlayer;
+		//
+		Texture texturePlayer;
+
+		SDL_Renderer*	Renderer_Display;
+
+		
 
     public:
         CApp();

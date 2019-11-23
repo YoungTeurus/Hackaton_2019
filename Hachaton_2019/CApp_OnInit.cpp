@@ -18,6 +18,8 @@ bool CApp::OnInit() {
 	Renderer_Display = SDL_CreateRenderer(Wind_Display, -1, 0);
 
 	menu = Menu(Wind_Display, Renderer_Display);
+	picturePlayer = CSurface::OnLoad(Renderer_Display, "GameActor.jpg");
+	texturePlayer = Texture(picturePlayer, 0, 0, 50, 50);
     return true;
 }
 
