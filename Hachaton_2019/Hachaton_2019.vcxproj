@@ -172,6 +172,7 @@
     <ClInclude Include="GameRoom.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="RoomTemplates.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>

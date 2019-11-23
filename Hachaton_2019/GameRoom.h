@@ -1,6 +1,6 @@
-#include <SDL.h>
 #include "GameObject.h"
 #include "GameActor.h"
+#include "RoomTemplates.h"
 #include <vector>
 #pragma once
 
@@ -30,4 +30,6 @@ private:
 
 	std::vector<GameObject*>* objects;	// Массив объектов
 	std::vector<GameActor*>* actors;	// Массив персонажей
+
+	RoomTemplates* room_templates = new RoomTemplates();
 };

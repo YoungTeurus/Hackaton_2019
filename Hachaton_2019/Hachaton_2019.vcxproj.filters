@@ -104,5 +104,8 @@
     <ClInclude Include="GameRoom.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
+    <ClInclude Include="RoomTemplates.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

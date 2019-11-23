@@ -1,4 +1,5 @@
 #include "GameRoom.h"
+#include <iostream>
 
 using namespace std;
 
@@ -23,9 +24,14 @@ GameRoom::GameRoom(int i, int j,
 	map_i = i;
 	map_j = j;
 
-	// Загружаем "template" комнаты откуда-то
-	// objects = RoomTemplates[room_template]->objects;
-	// actors = RoomTemplates[room_template]->actors;
+	// Загружаем "template" комнаты из определённого RoomTemplate
+	objects = room_templates->get_obj_vector(room_template);
+	actors = room_templates->get_act_vector(room_template);
+
+	// Если 
+	if (!(objects) || !(actors)) {
+		std::cout << "Не был найден подходящий template";
+	}
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
