@@ -20,11 +20,21 @@ public:
 	void		add_object(GameObject*);// Добавляет объект 
 	void		add_actor(GameActor*);	// Добавляет персонажа
 
-	int get_i();
-	int get_j();
+	//*******Get-еры*********//
+	int			get_i();				// Возвращает поле i
 
-	void set_i(int i);
-	void set_j(int j);
+	int			get_j();				// Возвращает поле j
+
+	std::vector<GameObject*>* get_objects();// Возвращает массив объектов 
+	std::vector<GameActor*>* get_actors();// Возвращает массив объектов 
+	//***********************//
+
+	//*******Set-еры*********//
+	void		set_i(int i);			// Устанавливает поле i
+	void		set_j(int j);			// Устанавливает поле j
+
+	//***********************//
+
 private:
 	int			map_i, map_j;			// Индексы комнаты на глобальной Map
 

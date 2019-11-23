@@ -30,6 +30,7 @@ void CApp::OnEvent(SDL_Event* Event)
 	{
 		gameOn = true;
 		game = new Game();//иниц игровую логику
+		game->load_test_room();
 	}
 }
 

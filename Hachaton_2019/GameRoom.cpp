@@ -52,6 +52,16 @@ int GameRoom::get_j()
 	return map_j;
 }
 
+std::vector<GameObject*>* GameRoom::get_objects()
+{
+	return objects;
+}
+
+std::vector<GameActor*>* GameRoom::get_actors()
+{
+	return actors;
+}
+
 void GameRoom::set_i(int i)
 {
 	map_i = i;
