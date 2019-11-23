@@ -39,6 +39,7 @@ class CApp {
 		//сама текстурка игрока с размерами и положением
 		Texture texturePlayer;
 
+		int IsWhat = 0;
 
     public:
         CApp();

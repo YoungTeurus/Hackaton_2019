@@ -44,11 +44,11 @@ int Menu::Update(SDL_Event* Event, SDL_Renderer* ren)
 	if (Event->button.button == SDL_BUTTON_LEFT)
 	{
 		if (xM >= start.InGame.x && xM <= start.InGame.x + start.InGame.w && yM >= start.InGame.y && yM <= start.InGame.y + start.InGame.h)
-			return 1;
+			return 1; // Нажали "Start"
 		if (xM >= exit.InGame.x && xM <= exit.InGame.x + exit.InGame.w && yM >= exit.InGame.y && yM <= exit.InGame.y + exit.InGame.h)
-			return 2;
+			return 3; // Нажали "Exit"
 		if (xM >= settings.InGame.x && xM <= settings.InGame.x + settings.InGame.w && yM >= settings.InGame.y && yM <= settings.InGame.y + settings.InGame.h)
-			return 3;
+			return 2; // Нажали "Setting"
 	}
 
 	return 0;
