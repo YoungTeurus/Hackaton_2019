@@ -1,4 +1,4 @@
-#include "GameObject.h"
+п»ї#include "GameObject.h"
 #include "GameActor.h"
 #include <vector>
 #include <map>
@@ -12,13 +12,13 @@ struct Obj_and_Act
 	vector<GameActor*>* act_vector;
 };
 
-// Коллекция всех комнат
-// Коллекция имеет
+// РљРѕР»Р»РµРєС†РёСЏ РІСЃРµС… РєРѕРјРЅР°С‚
+// РљРѕР»Р»РµРєС†РёСЏ РёРјРµРµС‚
 static map< int, Obj_and_Act > all_rooms;
 
 class RoomTemplates {
 public:
-	RoomTemplates() { // Загрузка и создание всех Template-ов
+	RoomTemplates() { // Р—Р°РіСЂСѓР·РєР° Рё СЃРѕР·РґР°РЅРёРµ РІСЃРµС… Template-РѕРІ
 		vector<GameObject*>* temp_obj_vect = new vector<GameObject*>();
 		GameObject* temp_obj = new GameObject(new SDL_Point{ 0,0 },50,50,true,false,false,false,0);
 		temp_obj_vect->push_back(temp_obj);
@@ -32,16 +32,16 @@ public:
 		all_rooms[0] = temp_0;
 	}
 
-	// Возвращает вектор GameObject-ов соответствующий ключу type.
-	// Если такого ключа нет, возвращаем nullptr
+	// Р’РѕР·РІСЂР°С‰Р°РµС‚ РІРµРєС‚РѕСЂ GameObject-РѕРІ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РєР»СЋС‡Сѓ type.
+	// Р•СЃР»Рё С‚Р°РєРѕРіРѕ РєР»СЋС‡Р° РЅРµС‚, РІРѕР·РІСЂР°С‰Р°РµРј nullptr
 	vector<GameObject*>*	get_obj_vector(int type) {
 		if (all_rooms.find(type) != all_rooms.end())
 			return all_rooms[type].obj_vector;
 		return nullptr;
 	}
 
-	// Возвращает вектор GameActor-ов соответствующий ключу type.
-	// Если такого ключа нет, возвращаем nullptr
+	// Р’РѕР·РІСЂР°С‰Р°РµС‚ РІРµРєС‚РѕСЂ GameActor-РѕРІ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёР№ РєР»СЋС‡Сѓ type.
+	// Р•СЃР»Рё С‚Р°РєРѕРіРѕ РєР»СЋС‡Р° РЅРµС‚, РІРѕР·РІСЂР°С‰Р°РµРј nullptr
 	vector<GameActor*>*		get_act_vector(int type) {
 		if (all_rooms.find(type) != all_rooms.end())
 			return all_rooms[type].act_vector;
