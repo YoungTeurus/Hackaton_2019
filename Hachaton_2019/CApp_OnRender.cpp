@@ -9,6 +9,7 @@ void CApp::OnRender() {
 	}
 	if (true)//мама мы в менюшке
 	{
+
 	}
 }
 

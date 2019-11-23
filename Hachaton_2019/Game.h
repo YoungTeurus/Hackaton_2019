@@ -8,22 +8,25 @@ class Game
 public:
 	Game();
 
-	// Проверяет столкновения GameActor-а со всеми объектами игрового поля, возвращает:
-		// 0 (или false) - нет столкновений ни с чем
-		// 1 (или !false) - есть столкновение с чем-то
+	// Проверяет столкновения GameActor-а со всеми объектами игрового поля, возвращает тип объекта, с которым стокнулся игрок:
+		// -1 (или false) - нет столкновений ни с чем
+		// 0 (или !false) - есть столкновение с чем-то
 		// другие числа (или !false) - есть столкновение с чем-то особым (например, дверью или сундуком)
-	int				check_all_collisions_with(GameObject* other_object);
+	friend int		check_all_collisions_with(GameObject* first_object, GameObject* other_object,
+		//Map* map // Указатель на карту
+		);
 	// TO-DO: Коллизии!
 	
 	//*******Get-еры*********//
 	GameActor*		get_player_1() { return player_1; }		// Возвращает первого игрока
+	//Room*			get_active_room();						// Получает активную комнату
 	//***********************//
 
 	//*******Set-еры*********//
-
+	//void			set_active_room();						// Устанавливает активную комнату
 	//***********************//
 private:
-	GameActor* player_1;
+	GameActor*		player_1;
 
 	// Текущая структура:
 	// Map хранит матрицу Room-ов, каждая из которых имеет list enemies и list objects.

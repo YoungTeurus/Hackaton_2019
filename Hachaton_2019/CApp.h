@@ -1,11 +1,8 @@
-﻿//==============================================================================
-// SDL Tutorial 1
-//==============================================================================
-#ifndef _CAPP_H_
-    #define _CAPP_H_
+﻿#pragma once
 
 #include <SDL.h>
 #include "Game.h"
+#include "Drawer.h"
 
 //==============================================================================
 class CApp {
@@ -16,7 +13,11 @@ class CApp {
 
 		SDL_Window*     Wind_Display;
 
-		Game* game;
+		SDL_Renerer*    Render;
+
+		Game*			game;
+
+		Drawer*         drawer;
 		
 
     public:
@@ -37,5 +38,3 @@ class CApp {
 };
 
 //==============================================================================
-
-#endif
