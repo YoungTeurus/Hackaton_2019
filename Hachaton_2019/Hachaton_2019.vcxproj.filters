@@ -66,6 +66,9 @@
     <ClCompile Include="CSurface.cpp">
       <Filter>Исходные файлы\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="GameRoom.cpp">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="CSurface.h">
       <Filter>Исходные файлы\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRoom.h">
+      <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

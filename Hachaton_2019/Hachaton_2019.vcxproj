@@ -157,6 +157,7 @@
     <ClCompile Include="GameActor.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameRoom.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="WindowSize.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameRoom.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Texture.h" />
