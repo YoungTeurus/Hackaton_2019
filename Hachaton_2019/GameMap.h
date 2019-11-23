@@ -1,11 +1,11 @@
-#pragma once
+п»ї#pragma once
 //#include "GameRoom"
 
 class GameMap
 {
 public:
 	GameMap();
-	//тут васе дописать
+	//С‚СѓС‚ РІР°СЃРµ РґРѕРїРёСЃР°С‚СЊ
 	
 private:
 	//array<GameRoom>

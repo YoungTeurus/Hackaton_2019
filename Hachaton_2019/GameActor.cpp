@@ -1,9 +1,9 @@
-#include "GameActor.h"
+ï»¿#include "GameActor.h"
 
 
 GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
 	int start_lvl, int start_hp, int start_mp, int start_dmg, bool start_is_looking_right, int start_type) :
-	GameObject(spawn_point, // Âûçûâàþ êîíñòðóêòîð ðîäèòåëÿ, ïåðåäàþ åìó âñå íåîáõîäèìûå äàííûå
+	GameObject(spawn_point, // Ð’Ñ‹Ð·Ñ‹Ð²Ð°ÑŽ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ, Ð¿ÐµÑ€ÐµÐ´Ð°ÑŽ ÐµÐ¼Ñƒ Ð²ÑÐµ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ
 				width,height,
 				start_is_looking_right,
 				true,	 // bool start_is_rotatable, 
@@ -12,7 +12,7 @@ GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
 				start_type
 		)
 {
-	// Îñòàëîñü óñòàíîâèòü ëèøü ñâîéñòâà, õàðàêòåðíûå Actor-ó
+	// ÐžÑÑ‚Ð°Ð»Ð¾ÑÑŒ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð»Ð¸ÑˆÑŒ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð°, Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€Ð½Ñ‹Ðµ Actor-Ñƒ
 	lvl = start_lvl;
 	hp = start_hp;
 	mp = start_mp;
@@ -52,17 +52,17 @@ void GameActor::set_dmg(int dmg_)
 bool GameActor::move(int direction)
 {
 	switch(direction){
-	case 0: return GameObject::move(0,speed);  break; // Äâèæåíèå ââåðõ
-	case 1: return GameObject::move(speed,0);  break; // Äâèæåíèå âïðàâî
-	case 2: return GameObject::move(0,-speed); break; // Äâèæåíèå âíèç
-	case 3: return GameObject::move(-speed,0); break; // Äâèæåíèå âëåâî
+	case 0: return GameObject::move(0,speed);  break; // Ð”Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð²Ð²ÐµÑ€Ñ…
+	case 1: return GameObject::move(speed,0);  break; // Ð”Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð²Ð¿Ñ€Ð°Ð²Ð¾
+	case 2: return GameObject::move(0,-speed); break; // Ð”Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð²Ð½Ð¸Ð·
+	case 3: return GameObject::move(-speed,0); break; // Ð”Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð²Ð»ÐµÐ²Ð¾
 	default: return false;
 	}
 }
 
 void GameActor::attack(GameActor* defencer)
 {
-	defencer->set_hp(defencer->get_hp() - dmg); // Óìåíüøàåì ó çàùèòíèêà æèçíè íà dmg
+	defencer->set_hp(defencer->get_hp() - dmg); // Ð£Ð¼ÐµÐ½ÑŒÑˆÐ°ÐµÐ¼ Ñƒ Ð·Ð°Ñ‰Ð¸Ñ‚Ð½Ð¸ÐºÐ° Ð¶Ð¸Ð·Ð½Ð¸ Ð½Ð° dmg
 }
 
 

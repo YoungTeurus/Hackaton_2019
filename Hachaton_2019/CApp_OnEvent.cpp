@@ -1,7 +1,7 @@
-//==============================================================================
+п»ї//==============================================================================
 #include "CApp.h"
 
-// Направления движения
+// РќР°РїСЂР°РІР»РµРЅРёСЏ РґРІРёР¶РµРЅРёСЏ
 #define UP 0
 #define RIGHT 1
 #define DOWN 2
@@ -12,8 +12,8 @@ void CApp::OnEvent(SDL_Event* Event)
 {
 	switch (Event->type)
 	{
-	case(SDL_QUIT):  Running = false; break; //окно закрывается
-	case(SDL_KEYDOWN): // нажата клавиша
+	case(SDL_QUIT):  Running = false; break; //РѕРєРЅРѕ Р·Р°РєСЂС‹РІР°РµС‚СЃСЏ
+	case(SDL_KEYDOWN): // РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р°
 		switch (Event->key.keysym.sym)
 		{
 		case SDLK_UP: game->get_player_1()->move(UP); break;
@@ -21,14 +21,14 @@ void CApp::OnEvent(SDL_Event* Event)
 		case SDLK_DOWN:  game->get_player_1()->move(DOWN); break;
 		case SDLK_LEFT:  game->get_player_1()->move(LEFT); break;
 		}//break;
-	//нажата клавиша мыши
+	//РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р° РјС‹С€Рё
 	case(SDL_MOUSEBUTTONDOWN): break;
 	default:
 		break;
 	}
-	if (true)//если игра началась тут какое-то событие
+	if (true)//РµСЃР»Рё РёРіСЂР° РЅР°С‡Р°Р»Р°СЃСЊ С‚СѓС‚ РєР°РєРѕРµ-С‚Рѕ СЃРѕР±С‹С‚РёРµ
 	{
-		game = new Game();//иниц игровую логику
+		game = new Game();//РёРЅРёС† РёРіСЂРѕРІСѓСЋ Р»РѕРіРёРєСѓ
 	}
 }
 
