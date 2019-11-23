@@ -5,9 +5,11 @@
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
-    Surf_Display = NULL;
+    Renderer_Display = NULL;
 
+	menu = Menu();
 	game = NULL;
+
     Running = true;
 }
 

@@ -16,6 +16,9 @@
     <Filter Include="Исходные файлы\Game">
       <UniqueIdentifier>{5095eacc-ae75-4b47-b9c7-9f3f06c69f3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Menu">
+      <UniqueIdentifier>{dfd6a373-473e-4103-bb82-570494edb58b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -51,6 +54,18 @@
     <ClCompile Include="GameMap.cpp">
       <Filter>Исходные файлы\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowSize.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="CSurface.cpp">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
@@ -67,6 +82,21 @@
     </ClInclude>
     <ClInclude Include="GameMap.h">
       <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowSize.h">
+      <Filter>Исходные файлы\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CSurface.h">
+      <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
