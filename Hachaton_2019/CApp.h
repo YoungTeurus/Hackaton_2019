@@ -10,6 +10,7 @@
 #include "CSurface.h"
 #include "Menu.h"
 #include "Windowr.h"
+#include <Windows.h>
 
 //==============================================================================
 class CApp {
@@ -23,6 +24,7 @@ class CApp {
 		Menu			menu;
 		//иниц игры
 		Game*			game;
+		const Uint8* board;
 		
 		bool			menuOn;
 		bool			gameOn;
