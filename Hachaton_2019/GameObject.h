@@ -24,13 +24,14 @@ public:
 
 	//*******События*********//
 	bool			on_colision(SDL_Rect*);	// Проверяет касается ли объект области
-	friend int		check_all_collisions_with(GameObject* other_object); // См. Game.h
+	// friend int		check_all_collisions_with(GameObject* other_object); // См. Game.h
 	//***********************//
 
 	//*******Get-еры*********//
 	SDL_Point*		getCoord();				// Получение координат объекта
 	SDL_Point*		get_size();				// Получение размеров модельки объекта
 	SDL_Rect*		get_object_rect();		// Получение модельки объекта
+	int				get_type();				// Получение типа объекта
 	//***********************//
 
 	//*******Set-еры*********//

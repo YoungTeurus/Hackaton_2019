@@ -10,10 +10,11 @@ public:
 	Game();
 
 	// Проверяет столкновения GameActor-а со всеми объектами игрового поля, возвращает:
+		// -1 - столкновение со стенкой
 		// 0 (или false) - нет столкновений ни с чем
 		// 1 (или !false) - есть столкновение с чем-то
 		// другие числа (или !false) - есть столкновение с чем-то особым (например, дверью или сундуком)
-	int				check_all_collisions_with(GameObject* other_object);
+	int				check_all_collisions(GameObject* object);
 	// TO-DO: Коллизии!
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room
