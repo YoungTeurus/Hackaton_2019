@@ -56,10 +56,10 @@ void CApp::OnRender() {
 				texturePlayer.DrawTexture(Renderer_Display);
 				SDL_Point* rect_pos = player->getCoord();
 				SDL_Point* rect_size = player->get_size();
-				//SDL_SetRenderDrawColor(Renderer_Display, 0, 250, 250, 255);
-				//SDL_RenderDrawRect(Renderer_Display, new SDL_Rect{ rect_pos->x + rect_to_draw.x, rect_pos->y + rect_to_draw.y,
-							//						rect_size->x, rect_size->y });
-				//SDL_SetRenderDrawColor(Renderer_Display, 0, 0, 0, 255);
+				SDL_SetRenderDrawColor(Renderer_Display, 0, 250, 250, 255);
+				SDL_RenderDrawRect(Renderer_Display, new SDL_Rect{ rect_pos->x + rect_to_draw.x, rect_pos->y + rect_to_draw.y,
+													rect_size->x, rect_size->y });
+				SDL_SetRenderDrawColor(Renderer_Display, 0, 0, 0, 255);
 			}
 		}
 	}

@@ -94,10 +94,9 @@ int GameObject::get_type()
 
 void GameObject::setCoord(SDL_Point* pnt)
 {
-	object_rect->x = pnt->x;
-	object_rect->y = pnt->y;
 	real_x = pnt->x;
 	real_y = pnt->y;
+	convert_pos(); // Меняем координаты x и y
 }
 
 

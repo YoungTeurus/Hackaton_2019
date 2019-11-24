@@ -2,6 +2,12 @@
 #include "CApp.h"
 #include "Game.h"
 
+// Направления движения
+#define UP 0
+#define RIGHT 1
+#define DOWN 2
+#define LEFT 3
+
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
@@ -48,13 +54,13 @@ void CApp::inputProssecing(SDL_Event* Event)
 	board = SDL_GetKeyboardState(NULL);
 
 	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
-		game->move_gameActor(game->get_player_1(), 0, 2);
+		game->move_gameActor(game->get_player_1(), UP);
 	if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
-		game->move_gameActor(game->get_player_1(), 2, 0);
+		game->move_gameActor(game->get_player_1(), DOWN);
 	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
-		game->move_gameActor(game->get_player_1(), 3, 1);
+		game->move_gameActor(game->get_player_1(), LEFT);
 	if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
-		game->move_gameActor(game->get_player_1(), 1, 3);
+		game->move_gameActor(game->get_player_1(), RIGHT);
 }
 
 
