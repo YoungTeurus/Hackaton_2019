@@ -1,4 +1,4 @@
-#include "CSurface.h"
+﻿#include "CSurface.h"
 
 CSurface::CSurface()
 {
@@ -21,3 +21,4 @@ SDL_Texture* CSurface::OnLoad(SDL_Renderer *ren, const char* File)
 	SDL_FreeSurface(Surf_Temp);
 	return tmp_text;
 }
+

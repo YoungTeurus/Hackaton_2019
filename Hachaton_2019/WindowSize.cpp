@@ -29,3 +29,8 @@ SDL_Rect WindowSize::Mashtab(SDL_Rect* BaseInGame)
 		int(BaseInGame->h * WindowSize::Koef)};
 	return tmp;
 }
+
+double WindowSize::GetKoef()
+{
+	return Koef;
+}

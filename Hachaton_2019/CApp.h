@@ -68,6 +68,8 @@ class CApp {
 
         void OnCleanup();
 
+		void CoordObjectIn25D(SDL_Window* win, AnimationTexture* texture, GameObject* object, Game* game);
+
 		void inputProssecing(SDL_Event* Event);
 };
 

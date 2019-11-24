@@ -8,7 +8,7 @@ class AnimationTexture
 {
 public:
 	AnimationTexture();
-	AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent);
+	AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent, int w, int h);
 	~AnimationTexture();
 
 	int GetCurrentFrame();
@@ -20,6 +20,8 @@ public:
 	void OnAnimation();
 	void DrawAnimationTexture(SDL_Renderer* ren);
 
+	double GetKoefH();
+	double GetKoefW();
 
 
 	int    MaxFrames;
@@ -38,5 +40,7 @@ private:
 	int FrameInc;
 	int MaxLent;
 	int StepLent;
+	double KoefH;
+	double KoefW;
 };
 
