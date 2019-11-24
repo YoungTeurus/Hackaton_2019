@@ -2,8 +2,9 @@
 
 Game::Game()
 {
-	SDL_Point* player_spawn_point = new SDL_Point{ 400,400 };
-	player_1 = new GameActor(player_spawn_point, 40, 60,
+	SDL_Point* player_spawn_point = new SDL_Point{ 400,400 }; // Точка появления игрока
+	SDL_Point player_size{45, 45}; // Размеры игрока
+	player_1 = new GameActor(player_spawn_point, player_size.x, player_size.y,
 		0, 10, 10, 5, true, 1); // Создаём объект-персонаж типа "1" - первый игрок
 
 	active_room = nullptr;

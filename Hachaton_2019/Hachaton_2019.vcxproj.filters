@@ -98,12 +98,6 @@
     <ClInclude Include="WindowSize.h">
       <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="GameRoom.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomTemplates.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
@@ -113,13 +107,19 @@
     <ClInclude Include="AnimationTexture.h">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
-    <ClInclude Include="Windowr.h">
-      <Filter>Исходные файлы</Filter>
+    <ClInclude Include="GameRoom.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomTemplates.h">
+      <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameRoom.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
     <ClInclude Include="RoomTemplates.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject_types.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
   </ItemGroup>
