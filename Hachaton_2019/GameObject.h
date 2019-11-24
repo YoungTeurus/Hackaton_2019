@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "SDL.h"
-
+#include"GameTexture.h"
 class GameObject
 {
 public:
@@ -37,7 +37,9 @@ public:
 	//*******Set-еры*********//
 	void			setCoord(SDL_Point*);	// Установка координат объекта
 	//***********************//
+	GameTexture* texture;
 
+	void SetTexture(const char*);
 private:
 
 	int				type;					//Уникальный тип объекта, требуемый для различения объектов, их отрисовки и всего в этом духе

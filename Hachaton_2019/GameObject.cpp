@@ -26,7 +26,8 @@ GameObject::GameObject(
 	is_active = false;
 
 	type = start_type;
-
+	//текстурка обьекта
+	
 	// Инициализируем начальное реальное положение объекта
 	real_x = object_rect->x;
 	real_y = object_rect->y;

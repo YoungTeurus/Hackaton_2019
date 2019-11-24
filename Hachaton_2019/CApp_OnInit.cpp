@@ -14,7 +14,7 @@ bool CApp::OnInit() {
 	}
 
 	// Создаём окно
-	if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1366, 768, 0) ) == NULL) {
+	if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 4080, 2160, SDL_WINDOW_FULLSCREEN) ) == NULL) {
         return false;
     }
 	//SDL_SetWindowFullscreen(Wind_Display, SDL_WINDOW_FULLSCREEN);
@@ -28,7 +28,7 @@ bool CApp::OnInit() {
 	picturePlayer = CSurface::OnLoad(Renderer_Display, "GameActor.jpg");
 	AnimPicturePlayer = CSurface::OnLoad(Renderer_Display, "TextAnim.png");;
 
-
+	Bullettexturer.SeetTexture(Renderer_Display, "bullet.png", 20, 20, 20, 20);
 	texturePlayer = AnimationTexture(Renderer_Display, AnimPicturePlayer, 9, 4);
 	//texturePlayer.Oscillate = true;
 	texturePlayer.InGame.h = 145;

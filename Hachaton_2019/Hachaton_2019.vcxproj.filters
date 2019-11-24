@@ -72,6 +72,9 @@
     <ClCompile Include="AnimationTexture.cpp">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClCompile>
+    <ClCompile Include="GameTexture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
@@ -113,14 +116,14 @@
     <ClInclude Include="AnimationTexture.h">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
-    <ClInclude Include="Windowr.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="GameRoom.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
     <ClInclude Include="RoomTemplates.h">
       <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTexture.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

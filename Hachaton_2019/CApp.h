@@ -12,6 +12,7 @@
 #include "WindowSize.h"
 #include <Windows.h>
 #include "AnimationTexture.h"
+#include"GameTexture.h"
 typedef SDL_Texture Picter; // более понятный тип данных
 
 
@@ -46,7 +47,8 @@ class CApp {
 		Picter* AnimPicturePlayer;
 		//сама текстурка игрока с размерами и положением
 		AnimationTexture texturePlayer;
-
+		GameTexture Bullettexturer;
+		
 		int MenuState = 0; // Состояние меню: 0 - ничего не нажато, 1-3 - нажаты кнопки с первой по третью
 
     public:

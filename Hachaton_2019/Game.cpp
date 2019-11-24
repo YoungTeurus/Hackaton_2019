@@ -61,6 +61,13 @@ void Game::load_test_room()
 	current_objects = active_room->get_objects();
 }
 
+void Game::CreateBullet()
+{
+	GameObject* bullet =new  GameObject(player_1->getCoord(), 20, 20, false, false, false, false, 3);
+	current_objects->push_back(bullet);
+
+
+}
 
 bool Game::move_gameActor(GameActor* actor, int direction)
 {
