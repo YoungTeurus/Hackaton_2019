@@ -14,7 +14,7 @@ void CApp::OnEvent(SDL_Event* Event)
 		Running = false;
 	switch (MenuState)
 	{
-	case 0: MenuState = menu.Update(Event, Renderer_Display); break;
+	case 0: MenuState = menu.Update(Event, CSurface::ren); break;
 	case 1:
 	{
 		if (!gameOn)//если игра началась тут какое-то событие

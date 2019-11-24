@@ -18,18 +18,18 @@ bool CApp::OnInit() {
         return false;
     }
 	//SDL_SetWindowFullscreen(Wind_Display, SDL_WINDOW_FULLSCREEN);
-	Renderer_Display = SDL_CreateRenderer(Wind_Display, -1, 0);
+	CSurface::ren = SDL_CreateRenderer(Wind_Display, -1, 0);
 	WindowSize::Init(Wind_Display);
 
+	CSurface::InitGameTexture();
 
-
-	menu = Menu(Wind_Display, Renderer_Display);
+	menu = Menu(Wind_Display, CSurface::ren);
 	//иниц  текстур для гаме
-	picturePlayer = CSurface::OnLoad(Renderer_Display, "GameActor.jpg");
-	AnimPicturePlayer = CSurface::OnLoad(Renderer_Display, "TextAnim.png");;
+	picturePlayer = CSurface::OnLoad(CSurface::ren, "GameActor.jpg");
+	AnimPicturePlayer = CSurface::OnLoad(CSurface::ren, "TextAnim.png");;
 
-	Bullettexturer.SeetTexture(Renderer_Display, "bullet.png", 20, 20, 20, 20);
-	texturePlayer = AnimationTexture(Renderer_Display, AnimPicturePlayer, 9, 4, NADO, NADO);
+	Bullettexturer.SeetTexture(CSurface::ren, "bullet.png", 20, 20, 20, 20);
+	texturePlayer = AnimationTexture(CSurface::ren, AnimPicturePlayer, 9, 4, NADO, NADO);
 	//texturePlayer = Texture(picturePlayer, 0, 0, 25, 25);
     return true;
 }

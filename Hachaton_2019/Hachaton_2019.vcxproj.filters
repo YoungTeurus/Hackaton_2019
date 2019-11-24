@@ -125,11 +125,12 @@
     <ClInclude Include="GameObject_types.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
+    <ClInclude Include="GameTexture.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

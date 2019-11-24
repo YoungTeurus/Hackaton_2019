@@ -11,7 +11,7 @@
 //==============================================================================
 CApp::CApp() {
 	Wind_Display = NULL;
-    Renderer_Display = NULL;
+    CSurface::ren = NULL;
 
 	menu = Menu();
 	game = NULL;
@@ -41,7 +41,7 @@ int CApp::OnExecute() {
         OnLoop();//в этой штуке забираем от game все изменения и меняем картинку
         OnRender(); //рисуем уже готовую картинку
 		SDL_Delay(10); // Задержка перед циклом, чтобы ЦП не убивался
-		SDL_RenderClear(Renderer_Display);
+		SDL_RenderClear(CSurface::ren);
     }
 
     OnCleanup();

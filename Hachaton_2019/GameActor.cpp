@@ -54,6 +54,20 @@ void GameActor::set_dmg(int dmg_)
 	dmg = dmg_;
 }
 
+GameObject GameActor::GoToObject(AnimationTexture *texture)
+{
+	GameObject tmp = GameObject(this->getCoord(), 
+		this->get_size().x, 
+		this->get_size().y, 
+		true, 
+		true,
+		true,
+		true,
+		2);
+	tmp.texture = *texture;
+	return tmp;
+}
+
 void GameActor::attack(GameActor* defencer)
 {
 	defencer->set_hp(defencer->get_hp() - dmg); // Уменьшаем у защитника жизни на dmg

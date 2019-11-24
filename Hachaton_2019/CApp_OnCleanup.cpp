@@ -4,7 +4,8 @@
 //==============================================================================
 void CApp::OnCleanup() {
 	SDL_DestroyTexture(picturePlayer);
-	SDL_DestroyRenderer(Renderer_Display);
+	SDL_DestroyRenderer(CSurface::ren);
+	CSurface::Destroy();
     SDL_Quit();
 }
 
@@ -22,8 +23,6 @@ void CApp::CoordObjectIn25D(SDL_Window* win, AnimationTexture* texture, GameObje
 
 	texture->InGame.w = ((double)object->getCoord().y + 200) * (double)texture->GetKoefW();
 	texture->InGame.h = ((double)object->getCoord().y + 200) * (double)texture->GetKoefH();
-
-	//êîìïåíñèðîâàíèå ïî x
 	texture->InGame.x -= object->getCoord().y * texture->GetKoefW() / 2;
 }
 

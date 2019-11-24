@@ -1,6 +1,9 @@
 ﻿#pragma once
 #include "SDL.h"
 #include"GameTexture.h"
+#include "AnimationTexture.h"
+
+
 class GameObject
 {
 public:
@@ -46,9 +49,11 @@ public:
 	void			setIsPassable(bool);
 	void			setIsPushable(bool);
 	//***********************//
-	GameTexture* texture;
 
-	void SetTexture(const char*);
+	void SetTexture(int type);
+
+	AnimationTexture texture;
+
 private:
 
 	int				type;					//Уникальный тип объекта, требуемый для различения объектов, их отрисовки и всего в этом духе
@@ -57,6 +62,9 @@ private:
 	// 1 - первый игрок
 	// 2 - второй игрок
 	// 3 - враг
+
+	
+
 
 	void			convert_pos();			// Переводим real-ую позицию объекта к ближайшим int-ам для coord
 

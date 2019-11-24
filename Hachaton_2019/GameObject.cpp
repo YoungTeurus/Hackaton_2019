@@ -28,14 +28,19 @@ GameObject::GameObject(
 	type = start_type;
 	//текстурка обьекта
 	
+	SetTexture(start_type);
+
+
 	// Инициализируем начальное реальное положение объекта
 	real_x = object_rect.x;
 	real_y = object_rect.y;
 }
 
+
+
 GameObject::~GameObject()
 {
-	delete &object_rect;
+	
 }
 
 void GameObject::convert_pos()
@@ -137,6 +142,11 @@ void GameObject::setSpeed(int s)
 void GameObject::setIsPushable(bool p)
 {
 	is_pushable = p;
+}
+
+void GameObject::SetTexture(int type)
+{
+	texture = CSurface::OnLoadObject(type);
 }
 
 void GameObject::setIsPassable(bool p)

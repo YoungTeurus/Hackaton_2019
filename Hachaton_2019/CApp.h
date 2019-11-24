@@ -12,8 +12,11 @@
 #include "WindowSize.h"
 #include <Windows.h>
 #include "AnimationTexture.h"
-#include"GameTexture.h"
+#include "GameTexture.h"
+#include <algorithm>
+#include <vector>
 typedef SDL_Texture Picter; // более понятный тип данных
+
 
 
 //==============================================================================
@@ -23,7 +26,6 @@ class CApp {
         bool            Running;
 
 		SDL_Window*		Wind_Display;
-		SDL_Renderer* Renderer_Display;
 		//иниц менюшку
 		Menu			menu;
 		//иниц игры

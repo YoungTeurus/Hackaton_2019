@@ -40,6 +40,8 @@ public:
 	void			set_dmg(int);			// Установка dmg
 	//***********************//
 
+	GameObject GoToObject(AnimationTexture* texture);
+
 private:
 		
 	//****Статы персонажа****//
