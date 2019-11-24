@@ -10,7 +10,7 @@ void CApp::OnRender() {
 	else // иначе отрисуем все картиночки из game
 	{
 		// Если игра запущена - отрисовываем прямоугольник комнаты
-		if (game) {
+		if (game && !pauseOn) {
 			SDL_Point* rect_size = game->get_active_room()->get_size();
 			SDL_Rect rect_to_draw = {
 				(WindowSize::GetW(Wind_Display) / 2) - (rect_size->x / 2),
@@ -60,11 +60,10 @@ void CApp::OnRender() {
 													rect_size->x, rect_size->y });
 				SDL_SetRenderDrawColor(Renderer_Display, 0, 0, 0, 255);
 			}
+			texturePlayer.DrawAnimationTexture(Renderer_Display);
 		}
-		texturePlayer.DrawAnimationTexture(Renderer_Display);
 	}
 	SDL_RenderPresent(Renderer_Display);
-	
 }
 
 //==============================================================================

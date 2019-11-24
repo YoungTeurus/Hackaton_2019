@@ -70,6 +70,9 @@ void CApp::inputProssecing(SDL_Event* Event)
 		game->move_gameActor(game->get_player_1(), RIGHT);
 		texturePlayer.SetAnimationDoroshka(4);
 	}
+	if(board[SDL_SCANCODE_ESCAPE]){
+		pauseOn = true;
+	}
 }
 
 
