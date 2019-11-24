@@ -44,7 +44,7 @@ GameObject* Game::check_all_collisions(GameObject* object)
 	auto obj_rect = object->get_object_rect();
 	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
 		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
-		return new GameObject();
+		return new GameObject(new SDL_Point{ 0,0 }, 0, 0, false, false, false, false, -1);
 
 	return nullptr;
 }
@@ -61,7 +61,9 @@ void Game::load_test_room()
 bool Game::move_gameActor(GameActor* actor, int direction)
 {
 	actor->move(direction);
-	if (check_all_collisions(actor) != 0)
-		actor->move((direction+2)%4);
+	GameObject* object_which_collissed = check_all_collisions(actor);
+	if (!object_which_collissed)
+		return true;
+	actor->move((direction+2)%4);
 	return true;
 }
