@@ -1,5 +1,6 @@
 ﻿#include "GameObject.h"
-
+#include "Timer.h"
+extern Timer main_timer;
 GameObject::GameObject(
 		SDL_Point* spawn_point, // Точка спавна
 		int width, // ширина модельки
@@ -43,8 +44,8 @@ bool GameObject::move(double delX, double delY)
 	//TO-DO: Сделать проверку на столкновение с объектами и УМНОЕ "отскакивание" без перемещения текстуры
 	// Персонаж вполне может "идти на месте", показывая, что он пытается идти, но при этом НЕ двигаться и НЕ дёргаться
 
-	real_x += delX;
-	real_y += delY;
+	real_x += delX * main_timer.delta; //перемещение на dalX пикселей в 1 кадр
+	real_y += delY * main_timer.delta; //перемещение на dalX пикселей в 1 кадр
 
 	// Считаем, что увеличение X - движение вправо
 	if (delX >= 0)

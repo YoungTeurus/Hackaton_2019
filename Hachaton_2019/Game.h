@@ -3,7 +3,7 @@
 #include "GameActor.h"
 #include "GameObject.h"
 #include "GameRoom.h"
-
+#include "Timer.h"
 class Game
 {
 public:
@@ -18,6 +18,8 @@ public:
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room
 
+	void AddBullet();
+
 	//*******Get-еры*********//
 	GameActor*		get_player_1() { return player_1; }		// Возвращает первого игрока
 	//***********************//
@@ -25,6 +27,7 @@ public:
 	//*******Set-еры*********//
 
 	//***********************//
+
 private:
 	GameActor*		player_1;
 
@@ -38,11 +41,12 @@ private:
 	// а все draw в методе onRender
 	// Забираем current_objects и current_enemies, чтобы отрисовать их.
 
+	vector<GameActor*>* current_enemies;					// Указатель на список врагов в данной (активной) комнате
+
+	vector<GameObject*>* current_objects;					// Указатель на список объектов в данной (активной) комнате
+
 	//Map* map; // Указатель на карту подземелья
 
 	GameRoom*		active_room;							// Указатель на активную комнату
 
-	vector<GameActor*>*  current_enemies;					// Указатель на список врагов в данной (активной) комнате
-
-	vector<GameObject*>* current_objects;					// Указатель на список объектов в данной (активной) комнате
 };

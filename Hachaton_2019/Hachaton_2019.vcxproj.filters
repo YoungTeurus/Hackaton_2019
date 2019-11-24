@@ -66,6 +66,9 @@
     <ClCompile Include="GameRoom.cpp">
       <Filter>Исходные файлы\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CApp.h">
@@ -98,5 +101,20 @@
     <ClInclude Include="CSurface.h">
       <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="GameRoom.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomTemplates.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Windowr.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

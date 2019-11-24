@@ -12,6 +12,13 @@ Game::Game()
 	current_objects = nullptr;
 }
 
+void Game::AddBullet()
+{
+	GameObject* bullet = new GameObject(player_1->getCoord(), 30, 30, false, false, false, false, 3);
+	bullet->Bspeed = 2;
+	current_objects->push_back(bullet);
+}
+
 void Game::load_test_room()
 {
 	active_room = new GameRoom(1, 1, 0);

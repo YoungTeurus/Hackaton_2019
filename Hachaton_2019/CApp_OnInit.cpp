@@ -19,6 +19,7 @@ bool CApp::OnInit() {
 
 	menu = Menu(Wind_Display, Renderer_Display);
 	//иниц  текстур для гаме
+
 	picturePlayer = CSurface::OnLoad(Renderer_Display, "GameActor.jpg");
 	texturePlayer = Texture(picturePlayer, 0, 0, 50, 50);
     return true;

@@ -17,6 +17,7 @@ GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
 	hp = start_hp;
 	mp = start_mp;
 	dmg = start_dmg;
+	
 }
 
 int GameActor::get_hp()

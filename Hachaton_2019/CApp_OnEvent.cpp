@@ -29,13 +29,6 @@ void CApp::OnEvent(SDL_Event* Event)
 		{
 		case(SDL_QUIT):  Running = false; break; //окно закрывается
 		case(SDL_KEYDOWN): // нажата клавиша
-			switch (Event->key.keysym.sym)
-			{
-			case SDLK_UP: game->get_player_1()->move(UP); break;
-			case SDLK_RIGHT: game->get_player_1()->move(RIGHT); break;
-			case SDLK_DOWN:  game->get_player_1()->move(DOWN); break;
-			case SDLK_LEFT:  game->get_player_1()->move(LEFT); break;
-			}//break;
 		//нажата клавиша мыши
 		case(SDL_MOUSEBUTTONDOWN): break;
 		default:

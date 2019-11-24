@@ -34,6 +34,7 @@ public:
 	//*******Set-еры*********//
 	void			setCoord(SDL_Point*);	// Установка координат объекта
 	//***********************//
+	double Bspeed;
 
 private:
 
