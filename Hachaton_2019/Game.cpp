@@ -19,7 +19,7 @@ int Game::check_all_collisions(GameObject* object)
 	// Обходим все объекты
 	for (int i = 0; i < obj_vector->size(); i++) {
 		GameObject* current_obj = obj_vector->at(i); // Текущий объект, с которым ведётся сравнение
-		if (current_obj == object) { // Проверяем, чтобы этот объект не является самим первым объектом
+		if (current_obj != object) { // Проверяем, чтобы этот объект не является самим первым объектом
 			if (SDL_HasIntersection(object->get_object_rect(), current_obj->get_object_rect())) {
 				return current_obj->get_type(); // Возвращаем тип объекта, с которым пересеклись
 			}
@@ -38,6 +38,21 @@ int Game::check_all_collisions(GameObject* object)
 void Game::load_test_room()
 {
 	active_room = new GameRoom(1, 1, 0);
+	auto player = get_player_1();
+	
+	//auto spawn_player = new SDL_Point();
+	//spawn_player->x = 354;
+	//spawn_player->y = 230;
+	//player->setCoord(spawn_player);
 	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();
+}
+
+
+bool Game::move_gameActor(GameActor* actor, int direction, int antdirection)
+{
+	actor->move(direction);
+	if (check_all_collisions(actor) == 0)
+		actor->move(antdirection);
+	return true;
 }
