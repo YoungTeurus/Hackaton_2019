@@ -53,7 +53,6 @@ int CApp::OnExecute() {
 void CApp::inputProssecing(SDL_Event* Event)
 {
 	board = SDL_GetKeyboardState(NULL);
-
 	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP]) {
 		game->move_gameActor(game->get_player_1(), UP);
 		texturePlayer.SetAnimationDoroshka(1);
@@ -62,7 +61,7 @@ void CApp::inputProssecing(SDL_Event* Event)
 		game->move_gameActor(game->get_player_1(), DOWN);
 		texturePlayer.SetAnimationDoroshka(3);
 	}
-	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT]){
+	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT]) {
 		game->move_gameActor(game->get_player_1(), LEFT);
 		texturePlayer.SetAnimationDoroshka(2);
 	}

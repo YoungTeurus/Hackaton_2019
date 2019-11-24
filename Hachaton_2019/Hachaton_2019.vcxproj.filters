@@ -113,9 +113,6 @@
     <ClInclude Include="AnimationTexture.h">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
-    <ClInclude Include="Windowr.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="GameRoom.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
@@ -125,8 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

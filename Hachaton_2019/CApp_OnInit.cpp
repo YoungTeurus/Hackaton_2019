@@ -29,10 +29,10 @@ bool CApp::OnInit() {
 	AnimPicturePlayer = CSurface::OnLoad(Renderer_Display, "TextAnim.png");;
 
 
-	texturePlayer = AnimationTexture(Renderer_Display, AnimPicturePlayer, 9, 4);
+	texturePlayer = AnimationTexture(Renderer_Display, AnimPicturePlayer, 9, 4, NADO, NADO);
 	//texturePlayer.Oscillate = true;
-	texturePlayer.InGame.h = 145;
-	texturePlayer.InGame.w = 145;
+	/*texturePlayer.InGame.h = 145;
+	texturePlayer.InGame.w = 145;*/
 	//texturePlayer = Texture(picturePlayer, 0, 0, 25, 25);
     return true;
 }

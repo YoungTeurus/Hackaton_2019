@@ -8,7 +8,7 @@ class AnimationTexture
 {
 public:
 	AnimationTexture();
-	AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent);
+	AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent, int w, int h);
 	~AnimationTexture();
 
 	int GetCurrentFrame();
@@ -17,15 +17,20 @@ public:
 	void SetCurrentFrame(int Frame);
 	void SetAnimationDoroshka(int Lent); // от 1 до MaxLent
 
+	//void Stop();
+	//void Start();
+
 	void OnAnimation();
 	void DrawAnimationTexture(SDL_Renderer* ren);
 
-
+	double GetKoefW();
+    double GetKoefh();
 
 	int    MaxFrames;
 	bool   Oscillate;
-
-
+	bool   OneRaz;
+	
+	bool stop;
 	SDL_Rect InGame;
 private:
 	int StepPixel;
@@ -38,5 +43,8 @@ private:
 	int FrameInc;
 	int MaxLent;
 	int StepLent;
+	double KoefW;
+	double KoefH;
+
 };
 
