@@ -169,6 +169,7 @@
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObject_types.h" />
     <ClInclude Include="GameRoom.h" />
     <ClInclude Include="GameTexture.h" />
     <ClInclude Include="Menu.h" />

@@ -14,9 +14,9 @@ public:
 		// 0 (или false) - нет столкновений ни с чем
 		// 1 (или !false) - есть столкновение с чем-то
 		// другие числа (или !false) - есть столкновение с чем-то особым (например, дверью или сундуком)
-	int				check_all_collisions(GameObject* object);
+	GameObject*		check_all_collisions(GameObject* object);
 	//двигает игрока, потом проверяет колизии, если столкнулся с чем-то, тогда подвинет обратно
-	bool			move_gameActor(GameActor* actor, int direction);
+	bool			move_gameObject(GameObject* object, int direction);
 	// TO-DO: Коллизии!
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room

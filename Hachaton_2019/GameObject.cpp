@@ -51,11 +51,7 @@ bool GameObject::move(double delX, double delY)
 	real_x += delX;
 	real_y += delY;
 	convert_pos();
-
-	// Проверяем на коллижены
-	// Если с чем-то столкнулись, то возвращаемся обратно
-	auto collision_result = 1;
-
+	
 	// Считаем, что увеличение X - движение вправо
 	if (delX >= 0)
 		is_looking_right = true;
@@ -63,6 +59,17 @@ bool GameObject::move(double delX, double delY)
 		is_looking_right = false;
 
 	return true;
+}
+
+bool GameObject::move(int direction)
+{
+	switch (direction) {
+	case 0: return GameObject::move(0, -get_speed());  break; // Движение вверх
+	case 1: return GameObject::move(get_speed(), 0);  break; // Движение вправо
+	case 2: return GameObject::move(0, get_speed()); break; // Движение вниз
+	case 3: return GameObject::move(-get_speed(), 0); break; // Движение влево
+	default: return false;
+	}
 }
 
 bool GameObject::on_colision(SDL_Rect* second_rect)
@@ -91,6 +98,21 @@ SDL_Rect* GameObject::get_object_rect()
 int GameObject::get_type()
 {
 	return type;
+}
+
+bool GameObject::get_is_passable()
+{
+	return is_passable;
+}
+
+bool GameObject::get_is_pushable()
+{
+	return is_pushable;
+}
+
+double GameObject::get_speed()
+{
+	return speed;
 }
 
 void GameObject::setCoord(SDL_Point* pnt)
