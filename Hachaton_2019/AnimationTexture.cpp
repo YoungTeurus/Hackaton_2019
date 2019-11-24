@@ -93,5 +93,5 @@ void AnimationTexture::OnAnimation()
 void AnimationTexture::DrawAnimationTexture(SDL_Renderer* ren)
 {
 	InPicter.x = GetStepPixel() * GetCurrentFrame(); //какой объект будет
-	SDL_RenderCopy(ren, texture, &InPicter, &InGame);
+	SDL_RenderCopy(ren, texture, &InPicter, &WindowSize::Mashtab(&InGame));
 }

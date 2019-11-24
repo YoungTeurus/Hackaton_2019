@@ -9,7 +9,7 @@
 #include <SDL_image.h>
 #include "CSurface.h"
 #include "Menu.h"
-#include "Windowr.h"
+#include "WindowSize.h"
 #include <Windows.h>
 #include "AnimationTexture.h"
 typedef SDL_Texture Picter; // более понятный тип данных

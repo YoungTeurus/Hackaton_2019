@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL.h>
-#include "Texture.h"
+#include "WindowSize.h"
 #include "CSurface.h"
 
 class AnimationTexture

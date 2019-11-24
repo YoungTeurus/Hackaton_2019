@@ -173,7 +173,6 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="RoomTemplates.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="Windowr.h" />
     <ClInclude Include="WindowSize.h" />
   </ItemGroup>
   <ItemGroup>

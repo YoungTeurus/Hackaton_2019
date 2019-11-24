@@ -70,7 +70,7 @@
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClCompile>
     <ClCompile Include="AnimationTexture.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Texture and animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,9 +104,6 @@
     <ClInclude Include="RoomTemplates.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Windowr.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
@@ -114,7 +111,7 @@
       <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
     <ClInclude Include="AnimationTexture.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
