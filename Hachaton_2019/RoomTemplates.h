@@ -20,11 +20,13 @@ class RoomTemplates {
 public:
 	RoomTemplates() { // Загрузка и создание всех Template-ов
 		vector<GameObject*>* temp_obj_vect = new vector<GameObject*>();
-		GameObject* temp_obj = new GameObject(new SDL_Point{ 0,0 },50,50,true,false,false,false,0);
+		GameObject* temp_obj = new GameObject(new SDL_Point{ 65,65 },50,50,true,false,false,false,1);
+		temp_obj_vect->push_back(temp_obj);
+		temp_obj = new GameObject(new SDL_Point{ 90,90 }, 10, 100, true, false, false, false, 1);
 		temp_obj_vect->push_back(temp_obj);
 
 		vector<GameActor*>* temp_act_vect = new vector<GameActor*>();
-		GameActor* temp_act = new GameActor(new SDL_Point{ 0,0 },55, 55, 1,10,5,3,true,1);
+		GameActor* temp_act = new GameActor(new SDL_Point{ 0,0 },55, 55, 1,10,5,3,true,2);
 		temp_act_vect->push_back(temp_act);
 
 		Obj_and_Act temp_0 = { temp_obj_vect, temp_act_vect };

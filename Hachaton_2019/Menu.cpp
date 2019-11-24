@@ -31,23 +31,23 @@ int Menu::Update(SDL_Event* Event, SDL_Renderer* ren)
 	SDL_GetMouseState(&xM, &yM);
 
 
-	if (xM >= start.InGame.x && xM <= start.InGame.x + start.InGame.w && yM >= start.InGame.y && yM <= start.InGame.y + start.InGame.h)
+	if (xM >= WindowSize::Mashtab(&start.InGame).x && xM <= WindowSize::Mashtab(&start.InGame).x + WindowSize::Mashtab(&start.InGame).w && yM >= WindowSize::Mashtab(&start.InGame).y && yM <= WindowSize::Mashtab(&start.InGame).y + WindowSize::Mashtab(&start.InGame).h)
 		start.InPicter.y = x * 3;
 	else start.InPicter.y = 0;
-	if (xM >= exit.InGame.x && xM <= exit.InGame.x + exit.InGame.w && yM >= exit.InGame.y && yM <= exit.InGame.y + exit.InGame.h)
+	if (xM >= WindowSize::Mashtab(&exit.InGame).x && xM <= WindowSize::Mashtab(&exit.InGame).x + WindowSize::Mashtab(&exit.InGame).w && yM >= WindowSize::Mashtab(&exit.InGame).y && yM <= WindowSize::Mashtab(&exit.InGame).y + WindowSize::Mashtab(&exit.InGame).h)
 		exit.InPicter.y = x * 5;
 	else exit.InPicter.y = x * 2;
-	if (xM >= settings.InGame.x && xM <= settings.InGame.x + settings.InGame.w && yM >= settings.InGame.y && yM <= settings.InGame.y + settings.InGame.h)
+	if (xM >= WindowSize::Mashtab(&settings.InGame).x && xM <= WindowSize::Mashtab(&settings.InGame).x + WindowSize::Mashtab(&settings.InGame).w && yM >= WindowSize::Mashtab(&settings.InGame).y && yM <= WindowSize::Mashtab(&settings.InGame).y + WindowSize::Mashtab(&settings.InGame).h)
 		settings.InPicter.y = x * 4;
 	else settings.InPicter.y = x;
 
 	if (Event->button.button == SDL_BUTTON_LEFT)
 	{
-		if (xM >= start.InGame.x && xM <= start.InGame.x + start.InGame.w && yM >= start.InGame.y && yM <= start.InGame.y + start.InGame.h)
+		if (xM >= WindowSize::Mashtab(&start.InGame).x && xM <= WindowSize::Mashtab(&start.InGame).x + WindowSize::Mashtab(&start.InGame).w && yM >= WindowSize::Mashtab(&start.InGame).y && yM <= WindowSize::Mashtab(&start.InGame).y + WindowSize::Mashtab(&start.InGame).h)
 			return 1; // Нажали "Start"
-		if (xM >= exit.InGame.x && xM <= exit.InGame.x + exit.InGame.w && yM >= exit.InGame.y && yM <= exit.InGame.y + exit.InGame.h)
+		if (xM >= WindowSize::Mashtab(&exit.InGame).x && xM <= WindowSize::Mashtab(&exit.InGame).x + WindowSize::Mashtab(&exit.InGame).w && yM >= WindowSize::Mashtab(&exit.InGame).y && yM <= WindowSize::Mashtab(&exit.InGame).y + WindowSize::Mashtab(&exit.InGame).h)
 			return 3; // Нажали "Exit"
-		if (xM >= settings.InGame.x && xM <= settings.InGame.x + settings.InGame.w && yM >= settings.InGame.y && yM <= settings.InGame.y + settings.InGame.h)
+		if (xM >= WindowSize::Mashtab(&settings.InGame).x && xM <= WindowSize::Mashtab(&settings.InGame).x + WindowSize::Mashtab(&settings.InGame).w && yM >= WindowSize::Mashtab(&settings.InGame).y && yM <= WindowSize::Mashtab(&settings.InGame).y + WindowSize::Mashtab(&settings.InGame).h)
 			return 2; // Нажали "Setting"
 	}
 
@@ -62,10 +62,9 @@ void Menu::Init(SDL_Window* win, SDL_Renderer* ren)
 	BackP = CSurface::OnLoad(ren, "Back.png");
 	int x = 100;
 
-	SDL_Rect start1 = { 743,WindowSize::GetH(win) / 2 - 50 - 65 - 100,358,100 };
-	SDL_Rect exit1 = { 743, WindowSize::GetH(win) / 2 +50 +65 ,358,100 };
-	SDL_Rect settings1 = { 743,WindowSize::GetH(win) / 2 -50 ,358,100 };
-
+	SDL_Rect start1 = { 743,SCREEN_HEIGHT / 2 - 50 - 65 - 100,358,100 };
+	SDL_Rect exit1 = { 743, SCREEN_HEIGHT / 2 +50 +65 ,358,100 };
+	SDL_Rect settings1 = { 743,SCREEN_HEIGHT / 2 -50 ,358,100 };
 
 	start = Texture(TileMenu, &start1, 0, 0, 358, x);
 	exit = Texture(TileMenu, &exit1, 0, x * 2, 358, x);

@@ -12,11 +12,9 @@ void CApp::OnEvent(SDL_Event* Event)
 {
 	if (Event->type == SDL_QUIT)
 		Running = false;
-
-
-	switch (IsWhat)
+	switch (MenuState)
 	{
-	case 0: IsWhat = menu.Update(Event, Renderer_Display); break;
+	case 0: MenuState = menu.Update(Event, Renderer_Display); break;
 	case 1:
 	{
 		if (!gameOn)//если игра началась тут какое-то событие
@@ -28,12 +26,14 @@ void CApp::OnEvent(SDL_Event* Event)
 		switch (Event->type)
 		{
 		case(SDL_QUIT):  Running = false; break; //окно закрывается
+		/*
 		case(SDL_KEYDOWN): // нажата клавиша
 		{
-		
+			
 			}//break;
 		//нажата клавиша мыши
 		case(SDL_MOUSEBUTTONDOWN): break;
+		*/
 		default:
 			break;
 		}

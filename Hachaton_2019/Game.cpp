@@ -2,19 +2,70 @@
 
 Game::Game()
 {
-	player_1 = new GameActor(new SDL_Point{0,0}, 40, 60,
+	SDL_Point* player_spawn_point = new SDL_Point{ 400,400 };
+	player_1 = new GameActor(player_spawn_point, 40, 60,
 		0, 10, 10, 5, true, 1); // Создаём объект-персонаж типа "1" - первый игрок
 
 	active_room = nullptr;
 
-	current_enemies = nullptr;
+	current_actors = nullptr;
 
 	current_objects = nullptr;
+}
+
+int Game::check_all_collisions(GameObject* object)
+{
+	// Проверка на пересечение со всеми объектами в комнате
+	auto obj_vector = get_current_objects();
+	// Обходим все объекты
+	for (int i = 0; i < obj_vector->size(); i++) {
+		GameObject* current_obj = obj_vector->at(i); // Текущий объект, с которым ведётся сравнение
+		if (current_obj != object) { // Проверяем, чтобы этот объект не является самим первым объектом
+			if (SDL_HasIntersection(object->get_object_rect(), current_obj->get_object_rect())) {
+				return current_obj->get_type(); // Возвращаем тип объекта, с которым пересеклись
+			}
+		}
+	}
+
+	// Проверка на пересечение со всеми персонажами в комнате
+	auto act_vector = get_current_actors();
+	// Обходим всех персонажей
+	for (int i = 0; i < act_vector->size(); i++) {
+		GameObject* current_act = act_vector->at(i); // Текущий объект, с которым ведётся сравнение
+		if (current_act != object) { // Проверяем, чтобы этот объект не является самим первым объектом
+			if (SDL_HasIntersection(object->get_object_rect(), current_act->get_object_rect())) {
+				return current_act->get_type(); // Возвращаем тип объекта, с которым пересеклись
+			}
+		}
+	}
+
+	// Проверяем столкновение с границами комнаты
+	auto obj_rect = object->get_object_rect();
+	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
+		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
+		return -1;
+
+	return 0;
 }
 
 void Game::load_test_room()
 {
 	active_room = new GameRoom(1, 1, 0);
-	current_enemies = active_room->get_actors();
+	auto player = get_player_1();
+	
+	//auto spawn_player = new SDL_Point();
+	//spawn_player->x = 354;
+	//spawn_player->y = 230;
+	//player->setCoord(spawn_player);
+	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();
+}
+
+
+bool Game::move_gameActor(GameActor* actor, int direction)
+{
+	actor->move(direction);
+	if (check_all_collisions(actor) != 0)
+		actor->move((direction+2)%4);
+	return true;
 }

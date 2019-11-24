@@ -17,6 +17,8 @@ GameRoom::GameRoom(int i, int j,	// Конструктор комнаты
 		actors = start_actors;
 	else
 		actors = new vector<GameActor*>(0);
+
+	size = new SDL_Point{ 500, 500 };
 }
 
 GameRoom::GameRoom(int i, int j,
@@ -32,6 +34,8 @@ GameRoom::GameRoom(int i, int j,
 	if (!(objects) || !(actors)) {
 		std::cout << "Не был найден подходящий template";
 	}
+
+	size = new SDL_Point{ 500, 500 };
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
@@ -50,6 +54,11 @@ int GameRoom::get_i()
 int GameRoom::get_j()
 {
 	return map_j;
+}
+
+SDL_Point* GameRoom::get_size()
+{
+	return size;
 }
 
 std::vector<GameObject*>* GameRoom::get_objects()
