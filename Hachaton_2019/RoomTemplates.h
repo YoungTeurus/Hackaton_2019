@@ -35,10 +35,10 @@ public:
 		add_object(temp_obj_vect, SDL_Point{ 350,250 }, ROCK);
 		add_object(temp_obj_vect, SDL_Point{ 350,300 }, ROCK_LONG_VERTICAL);
 
-		add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
+		/*add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
 		add_object(temp_obj_vect, SDL_Point{ 494, 200}, 5, 100, EXIT_RIGHT);
 		add_object(temp_obj_vect, SDL_Point{ 200, 1 }, 100, 5, EXIT_UP);
-		add_object(temp_obj_vect, SDL_Point{ 200, 494 }, 100, 5, EXIT_DOWN);
+		add_object(temp_obj_vect, SDL_Point{ 200, 494 }, 100, 5, EXIT_DOWN);*/
 
 		vector<GameActor*>* temp_act_vect = new vector<GameActor*>();
 		add_actor(temp_act_vect, SDL_Point{ 75,275 }, 1, 10, 5, 3, true, TEST_ACTOR);
@@ -63,10 +63,10 @@ public:
 		add_object(temp_obj_vect, SDL_Point{ 350, 150 }, ROCK_LONG_VERTICAL);
 		add_object(temp_obj_vect, SDL_Point{ 250, 300 }, ROCK);
 
-		add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
+		/*add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
 		add_object(temp_obj_vect, SDL_Point{ 494, 200 }, 5, 100, EXIT_RIGHT);
 		add_object(temp_obj_vect, SDL_Point{ 200, 1 }, 100, 5, EXIT_UP);
-		add_object(temp_obj_vect, SDL_Point{ 200, 494 }, 100, 5, EXIT_DOWN);
+		add_object(temp_obj_vect, SDL_Point{ 200, 494 }, 100, 5, EXIT_DOWN);*/
 
 		 temp_act_vect = new vector<GameActor*>();
 		 add_actor(temp_act_vect, SDL_Point{ 25,425 }, 1, 10, 5, 3, true, TEST_ACTOR);
@@ -95,10 +95,10 @@ public:
 		add_object(temp_obj_vect, SDL_Point{ 650, 350 }, ROCK);
 		add_object(temp_obj_vect, SDL_Point{ 500, 450 }, ROCK);
 
-		add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
+		/*add_object(temp_obj_vect, SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT);
 		add_object(temp_obj_vect, SDL_Point{ 694, 200 }, 5, 100, EXIT_RIGHT);
 		add_object(temp_obj_vect, SDL_Point{ 300, 1 }, 100, 5, EXIT_UP);
-		add_object(temp_obj_vect, SDL_Point{ 300, 494 }, 100, 5, EXIT_DOWN);
+		add_object(temp_obj_vect, SDL_Point{ 300, 494 }, 100, 5, EXIT_DOWN);*/
 
 		temp_act_vect = new vector<GameActor*>();
 		add_actor(temp_act_vect, SDL_Point{ 325,225 }, 1, 10, 5, 3, true, TEST_ACTOR);

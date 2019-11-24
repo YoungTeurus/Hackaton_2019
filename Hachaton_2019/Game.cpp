@@ -72,7 +72,7 @@ GameObject* Game::check_all_collisions(GameObject* object)
 void Game::load_test_room()
 {
 	//active_room = new GameRoom(1, 1, 0);
-	active_room = map->matrix[5][5];
+	active_room = map->matrix[5][6];
 	auto player = get_player_1();
 	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();

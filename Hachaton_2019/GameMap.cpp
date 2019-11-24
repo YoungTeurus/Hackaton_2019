@@ -23,8 +23,8 @@ void Map::gener(GameRoom* Curr, int deep)
 	//вверх
 	if (Curr->get_i() > 0) {
 		if (matrix[i - 1][j] == nullptr) {
-
-			matrix[i - 1][j] = new GameRoom(i, j, 1);
+			matrix[i][j]->add_object(new GameObject(SDL_Point{ 200, 494 }, 100, 5, EXIT_DOWN));
+			matrix[i - 1][j] = new GameRoom(i, j, room_template);
 			matrix[i - 1][j]->set_i(i - 1);
 			matrix[i - 1][j]->set_j(j);
 			if (deepDelta > rand() % 100) {
@@ -36,8 +36,8 @@ void Map::gener(GameRoom* Curr, int deep)
 	//вправо
 	if (Curr->get_j() - 1 < rooms) {
 		if (matrix[i][j + 1] == nullptr) {
-
-			matrix[i][j + 1] = new GameRoom(i, j, 1);
+			matrix[i][j]->add_object(new GameObject(SDL_Point{ 1,200 }, 5, 100, EXIT_LEFT));
+			matrix[i][j + 1] = new GameRoom(i, j, room_template);
 			matrix[i][j + 1]->set_i(i);
 			matrix[i][j + 1]->set_j(j + 1);
 			if (deepDelta > rand() % 100) {
@@ -49,7 +49,8 @@ void Map::gener(GameRoom* Curr, int deep)
 	//вниз
 	if (Curr->get_i() < rooms - 2) {
 		if (matrix[i + 1][j] == nullptr) {
-			matrix[i + 1][j] = new GameRoom(i, j, 1);
+			matrix[i][j]->add_object(new GameObject(SDL_Point{ 200, 1 }, 100, 5, EXIT_UP));
+			matrix[i + 1][j] = new GameRoom(i, j, room_template);
 			matrix[i + 1][j]->set_i(i + 1);
 			matrix[i + 1][j]->set_j(j);
 			if (deepDelta > rand() % 100) {
@@ -62,8 +63,9 @@ void Map::gener(GameRoom* Curr, int deep)
 	if (Curr->get_j() > 0)
 	{
 		if (matrix[i][j - 1]) {
+			matrix[i][j]->add_object(new GameObject(SDL_Point{ 494, 200 }, 5, 100, EXIT_RIGHT));
 			cout << "i: " << i << " j: " << j << endl;
-			matrix[i][j - 1] = new GameRoom(i, j, 1);
+			matrix[i][j - 1] = new GameRoom(i, j, room_template);
 			matrix[i][j - 1]->set_i(i);
 			matrix[i][j - 1]->set_j(j - 1);
 			if (deepDelta > rand() % 100) {
