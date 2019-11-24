@@ -11,6 +11,7 @@ struct Obj_and_Act
 {
 	vector<GameObject*>* obj_vector;
 	vector<GameActor*>* act_vector;
+	SDL_Point* size;
 };
 
 // Коллекция всех комнат
@@ -34,7 +35,9 @@ public:
 		// GameActor* temp_act = new GameActor(new SDL_Point{ 0,0 },55, 55, 1,10,5,3,true, TEST_ACTOR);
 		// temp_act_vect->push_back(temp_act);
 
-		Obj_and_Act temp_0 = { temp_obj_vect, temp_act_vect };
+		SDL_Point* temp_room_size = new SDL_Point{ 500,500 };
+
+		Obj_and_Act temp_0 = { temp_obj_vect, temp_act_vect,  temp_room_size};
 
 		all_rooms[0] = temp_0;
 	}
@@ -52,6 +55,12 @@ public:
 	vector<GameActor*>*		get_act_vector(int type) {
 		if (all_rooms.find(type) != all_rooms.end())
 			return all_rooms[type].act_vector;
+		return nullptr;
+	}
+
+	SDL_Point* get_size(int type) {
+		if (all_rooms.find(type) != all_rooms.end())
+			return all_rooms[type].size;
 		return nullptr;
 	}
 

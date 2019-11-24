@@ -1,5 +1,6 @@
 // Определяем все типы объектов
 
+#define WALL -1
 #define PLAYER_ONE 1 // Actor, игрок 1
 #define ROCK 50, 50, true, false, false, false, 2 // Object, повёрнутый вправо, не нужно вращать, не проходимый, не толкаемый. Размеры: (50,50)
 #define ROCK_LONG_HORIZONTAL 100, 50, true, false, false, false, 2 // Object, повёрнутый вправо, не нужно вращать, не проходимый, не толкаемый. Размеры: (100,50)

@@ -29,13 +29,14 @@ GameRoom::GameRoom(int i, int j,
 	// Загружаем "template" комнаты из определённого RoomTemplate
 	objects = room_templates->get_obj_vector(room_template);
 	actors = room_templates->get_act_vector(room_template);
+	size = room_templates->get_size(room_template);
 
 	// Если 
 	if (!(objects) || !(actors)) {
 		std::cout << "Не был найден подходящий template";
 	}
 
-	size = new SDL_Point{ 500, 500 };
+	
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
