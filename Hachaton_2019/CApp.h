@@ -58,6 +58,8 @@ class CApp {
         int OnExecute();
 
     public:
+		GameTexture Bullet; // Текстура пули
+
         bool OnInit();
 
         void OnEvent(SDL_Event* Event);

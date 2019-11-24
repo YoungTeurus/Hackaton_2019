@@ -76,10 +76,15 @@ void Game::load_test_room()
 
 void Game::CreateBullet()
 {
-	GameObject* bullet =new  GameObject(player_1->getCoord(), 20, 20, false, false, false, false, 3);
+	SDL_Point CenterPoint = player_1->getCoord();
+	SDL_Point CenterPoint2 = player_1->get_size();
+	CenterPoint.x += CenterPoint2.x / 2 - 10;
+	CenterPoint.y += CenterPoint2.y / 2 - 10;
+	GameObject* bullet = new  GameObject(CenterPoint, 20, 20, false, false, true, false, 3);
+	bullet->set_speed(2);
+	bullet->set_direction(player_1->get_direction());
+	bullet->set_type(5);
 	current_objects->push_back(bullet);
-
-
 }
 
 void Game::tact(){
@@ -104,7 +109,7 @@ void Game::tact(){
 }
 
 
-int Game::getDistance(GameObject* obj1, GameObject* obj2)
+double Game::getDistance(GameObject* obj1, GameObject* obj2)
 {
 	SDL_Rect obj1_rect = obj1->get_object_rect();
 	SDL_Rect obj2_rect = obj2->get_object_rect();
@@ -116,7 +121,7 @@ int Game::getDistance(GameObject* obj1, GameObject* obj2)
 	return (sqrt(distanseX * distanseX + distanseY * distanseY));
 }
 
-
+//если с чем-то столкнулись вернет true, иначе false
 bool Game::move_gameObject(GameObject* object, int direction)
 {
 	object->move(direction);
@@ -133,5 +138,5 @@ bool Game::move_gameObject(GameObject* object, int direction)
 		return true;
 	}
 	object->move((direction+2)%4);
-	return true;
+	return false;
 }

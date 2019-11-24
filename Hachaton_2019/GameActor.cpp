@@ -39,6 +39,11 @@ int GameActor::get_dmg()
 	return dmg;
 }
 
+int GameActor::get_cooldown()
+{
+	return cooldown;
+}
+
 void GameActor::set_hp(int hp_)
 {
 	hp = hp_;
@@ -52,6 +57,11 @@ void GameActor::set_mp(int mp_)
 void GameActor::set_dmg(int dmg_)
 {
 	dmg = dmg_;
+}
+
+void GameActor::set_cooldown(int cld)
+{
+	cooldown = cld;
 }
 
 void GameActor::attack(GameActor* defencer)

@@ -52,7 +52,7 @@ private:
 	// Забираем current_objects и current_actors, чтобы отрисовать их.
 
 	//Map* map; // Указатель на карту подземелья
-	int getDistance(GameObject*, GameObject*);
+	double			getDistance(GameObject*, GameObject*);	// Возвращает расстояние между двумя объектами
 
 	GameRoom*		active_room;							// Указатель на активную комнату
 

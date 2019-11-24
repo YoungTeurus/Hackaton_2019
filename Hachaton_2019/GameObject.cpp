@@ -120,6 +120,21 @@ double GameObject::get_speed()
 	return speed;
 }
 
+bool GameObject::get_direction()
+{
+	return is_looking_right;
+}
+
+void GameObject::set_type(int tip)
+{
+	type = tip;
+}
+
+void GameObject::set_direction(bool dir)
+{
+	is_looking_right = dir;
+}
+
 void GameObject::setCoord(SDL_Point* pnt)
 {
 	real_x = pnt->x;
@@ -128,7 +143,7 @@ void GameObject::setCoord(SDL_Point* pnt)
 }
 
 
-void GameObject::setSpeed(int s)
+void GameObject::set_speed(int s)
 {
 	speed = s;
 }

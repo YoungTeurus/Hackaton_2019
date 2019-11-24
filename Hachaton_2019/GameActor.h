@@ -32,12 +32,14 @@ public:
 	int				get_hp();				// Получение HP
 	int				get_mp();				// Получение MP
 	int				get_dmg();				// Получение dmg
+	int				get_cooldown();			// Получение cooldown
 	//***********************//
 
 	//*******Set-еры*********//
 	void			set_hp(int);			// Установка HP
 	void			set_mp(int);			// Установка MP
 	void			set_dmg(int);			// Установка dmg
+	void			set_cooldown(int);		// Установка cooldown
 	//***********************//
 
 private:
@@ -50,6 +52,7 @@ private:
 	int				dmg;					// Урон персонажа
 	//***********************//
 
+	int				cooldown = 100;			// Время с последней выпущенной пули
 	
 };
 
