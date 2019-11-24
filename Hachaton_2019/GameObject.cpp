@@ -43,8 +43,8 @@ bool GameObject::move(double delX, double delY)
 	//TO-DO: Сделать проверку на столкновение с объектами и УМНОЕ "отскакивание" без перемещения текстуры
 	// Персонаж вполне может "идти на месте", показывая, что он пытается идти, но при этом НЕ двигаться и НЕ дёргаться
 
-	double prev_real_x = real_x, prev_real_y = real_y; // Сохраняем предыдущие значения x и y, чтобы можно было откатиться
-	int prev_x = object_rect->x, prev_y = object_rect->y;
+	//double prev_real_x = real_x, prev_real_y = real_y; // Сохраняем предыдущие значения x и y, чтобы можно было откатиться
+	//int prev_x = object_rect->x, prev_y = object_rect->y;
 
 	// Прибавляем перемещение
 	real_x += delX;
@@ -96,6 +96,8 @@ void GameObject::setCoord(SDL_Point* pnt)
 {
 	object_rect->x = pnt->x;
 	object_rect->y = pnt->y;
+	real_x = pnt->x;
+	real_y = pnt->y;
 }
 
 
