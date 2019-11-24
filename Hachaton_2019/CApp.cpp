@@ -53,7 +53,6 @@ int CApp::OnExecute() {
 void CApp::inputProssecing(SDL_Event* Event)
 {
 	board = SDL_GetKeyboardState(NULL);
-
 	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP]) {
 		game->move_gameObject(game->get_player_1(), UP);
 		texturePlayer.SetAnimationDoroshka(1);

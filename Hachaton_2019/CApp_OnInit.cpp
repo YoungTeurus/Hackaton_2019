@@ -31,8 +31,8 @@ bool CApp::OnInit() {
 	Bullettexturer.SeetTexture(Renderer_Display, "bullet.png", 20, 20, 20, 20);
 	texturePlayer = AnimationTexture(Renderer_Display, AnimPicturePlayer, 9, 4);
 	//texturePlayer.Oscillate = true;
-	texturePlayer.InGame.h = 145;
-	texturePlayer.InGame.w = 145;
+	/*texturePlayer.InGame.h = 145;
+	texturePlayer.InGame.w = 145;*/
 	//texturePlayer = Texture(picturePlayer, 0, 0, 25, 25);
     return true;
 }

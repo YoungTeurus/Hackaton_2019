@@ -5,16 +5,10 @@
 void CApp::OnLoop() {
 	if (game) {
 		//получаем смещение игрока
-		game->tact();
-		texturePlayer.InGame.x = game->get_player_1()->getCoord().x;
-		texturePlayer.InGame.y = game->get_player_1()->getCoord().y;
+		CSurface::CoordObjectIn25D(Wind_Display, &texturePlayer, game->get_player_1(), game);
 		texturePlayer.OnAnimation(); //анимация запуск
-		//vector<GameObject*>* g = game->get_current_objects;
-		for (int i = 0; i < 0; i++)
-		{
-			//g->at(i)->move;
-		}
 
+		printf_s("%d %d %d %d\n", texturePlayer.InGame.x, texturePlayer.InGame.y, texturePlayer.InGame.w, texturePlayer.InGame.h);
 	}
 }
 

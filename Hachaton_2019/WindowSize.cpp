@@ -21,6 +21,11 @@ void WindowSize::Init(SDL_Window* win)
 	WindowSize::Koef = (double)GetW(win) / (double)SCREEN_WEIGHT;
 }
 
+double WindowSize::GetKoef()
+{
+	return Koef;
+}
+
 SDL_Rect WindowSize::Mashtab(SDL_Rect* BaseInGame)
 {
 	SDL_Rect tmp = { int(BaseInGame->x * WindowSize::Koef),
