@@ -78,6 +78,13 @@ void Game::load_test_room()
 	current_objects = active_room->get_objects();
 }
 
+void Game::load_room(int i, int j)
+{
+	active_room = map->matrix[i][j];
+	current_actors = map->matrix[i][j]->get_actors();
+	current_objects = map->matrix[i][j]->get_objects();
+}
+
 void Game::CreateBullet()
 {
 	SDL_Point CenterPoint = player_1->getCoord();
@@ -134,6 +141,28 @@ bool Game::move_gameObject(GameObject* object, int direction)
 	if (!object_which_collissed) { // если не пересекаемся ни с одним объектом
 		return true;
 	}
+	// Тестовая проверка на двери
+	else if (object == get_player_1() && object_which_collissed->get_type() == 50) { // Дверь вверх
+		load_room(active_room->get_i() - 1, active_room->get_j());
+		//active_room = map->matrix[active_room->get_i() - 1][active_room->get_j()];
+		get_player_1()->setCoord(new SDL_Point{0,0});
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 51) { // Дверь вправо
+		load_room(active_room->get_i(), active_room->get_j()+1);
+		//active_room = map->matrix[active_room->get_i()][active_room->get_j() + 1];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 52) { // Дверь вниз
+		load_room(active_room->get_i() + 1, active_room->get_j());
+		//active_room = map->matrix[active_room->get_i() + 1][active_room->get_j()];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 53) { // Дверь влево
+		load_room(active_room->get_i(), active_room->get_j()-1);
+		//active_room = map->matrix[active_room->get_i()][active_room->get_j() - 1];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	//
 	else if (object_which_collissed->get_is_pushable()) { // либо объект, с которым пересекаемся, разрешено толкать
 		move_gameObject(object_which_collissed, direction);
 		// object_which_collissed->move(direction);

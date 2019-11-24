@@ -3,6 +3,7 @@
 #include "RoomTemplates.h"
 #include <stdlib.h>
 #include <iostream>
+#include <time.h>
 // Направления движения
 #define UP 0
 #define RIGHT 1
@@ -13,6 +14,7 @@ extern map< int, Obj_and_Act > all_rooms;
 
 void Map::gener(GameRoom* Curr, int deep)
 {
+	srand(time(NULL));
 	using namespace std;
 	int i = Curr->get_i(), j = Curr->get_j();
 	static int room_created = 1;

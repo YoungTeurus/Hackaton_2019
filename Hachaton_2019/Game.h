@@ -24,6 +24,7 @@ public:
 	bool			move_gameObject(GameObject* object, int direction);
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room
+	void			load_room(int i, int j);				// Загружает комнату map->matrix[i][j] в active_room
 
 	//*******Get-еры*********//
 	GameActor*		get_player_1() { return player_1; }		// Возвращает первого игрока
