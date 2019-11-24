@@ -6,7 +6,7 @@ AnimationTexture::AnimationTexture()
 }
 
 //maxlent - сколько анимаций(дорожек) в картинке хранится вообще
-AnimationTexture::AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent)
+AnimationTexture::AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, int MaxFrames, int MaxLent, int w, int h)
 {
 	texture = picter;
 	CurrentFrame = 0;
@@ -15,13 +15,18 @@ AnimationTexture::AnimationTexture(SDL_Renderer* render, SDL_Texture* picter, in
 	FrameRate = 100; //Milliseconds
 	OldTime = 0;
 	Oscillate = false;
-	int w, h;
-	SDL_QueryTexture(texture, NULL, NULL, &w, &h);
+	int w2, h2;
+	SDL_QueryTexture(texture, NULL, NULL, &w2, &h2);
 
-	StepPixel = InPicter.w = InGame.w = w / MaxFrames;
-	StepLent = InPicter.h = InGame.h = h / MaxLent;
+	StepPixel = InPicter.w = InGame.w = w2 / MaxFrames;
+	StepLent = InPicter.h = InGame.h = h2 / MaxLent;
 	InPicter.y = 0;
 	this->MaxLent = MaxLent;
+	KoefW = (double)1 - ((double)30 / (double)w);
+	KoefH = (double)1 - ((double)30 / (double)h);
+	InGame.w = w2;
+	InGame.h = h2;
+
 
 
 }
@@ -94,4 +99,14 @@ void AnimationTexture::DrawAnimationTexture(SDL_Renderer* ren)
 {
 	InPicter.x = GetStepPixel() * GetCurrentFrame(); //какой объект будет
 	SDL_RenderCopy(ren, texture, &InPicter, &WindowSize::Mashtab(&InGame));
+}
+
+double AnimationTexture::GetKoefH()
+{
+	return KoefH;
+}
+
+double AnimationTexture::GetKoefW()
+{
+	return KoefW;
 }

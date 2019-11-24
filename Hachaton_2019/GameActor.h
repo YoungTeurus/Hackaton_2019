@@ -8,7 +8,7 @@ public:
 	// GameActor(); // Конструктор по умолчанию
 
 	GameActor(								// Конструктор персонажа
-		SDL_Point* spawn_point, // Точка спавна
+		SDL_Point spawn_point, // Точка спавна
 		int width, // ширина модельки
 		int height, // высота модельки
 		int start_lvl, // Начальный уровень
@@ -18,6 +18,8 @@ public:
 		bool start_is_looking_right, // В какую сторону игрок смотрит изначально (см. ниже)
 		int start_type // Тип персонажа
 		);
+
+	~GameActor();
 
 	//*Управление состоянием*//
 	void			attack(GameActor*);		// Атакует переданного персонажа, нанося урон его hp в размере своего dmg
@@ -30,12 +32,14 @@ public:
 	int				get_hp();				// Получение HP
 	int				get_mp();				// Получение MP
 	int				get_dmg();				// Получение dmg
+	int				get_cooldown();			// Получение cooldown
 	//***********************//
 
 	//*******Set-еры*********//
 	void			set_hp(int);			// Установка HP
 	void			set_mp(int);			// Установка MP
 	void			set_dmg(int);			// Установка dmg
+	void			set_cooldown(int);		// Установка cooldown
 	//***********************//
 
 private:
@@ -48,6 +52,7 @@ private:
 	int				dmg;					// Урон персонажа
 	//***********************//
 
+	int				cooldown = 100;			// Время с последней выпущенной пули
 	
 };
 

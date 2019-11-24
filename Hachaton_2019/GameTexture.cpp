@@ -1,4 +1,5 @@
 #include "GameTexture.h"
+#include <string>
 
 GameTexture::GameTexture()
 {
@@ -16,9 +17,14 @@ GameTexture::GameTexture(SDL_Renderer* ren, const char* name, int x, int y, int 
 	_texture = CSurface::OnLoad(ren, name);
 	this->InGame = { x,y,w,h };
 }
-void GameTexture::SeetTexture(SDL_Renderer* ren, const char* name, int x, int y, int w, int h)
+void GameTexture::SetTexture(SDL_Renderer* ren, int type, SDL_Point* coord, SDL_Point* size)
 {
+	std::string name;
 
+	name = "bullet.bmp";
+
+	_texture = CSurface::OnLoad(ren, name.c_str());
+	this->InGame = { coord->x,coord->y,size->x,size->y };
 }
 GameTexture::~GameTexture()
 {

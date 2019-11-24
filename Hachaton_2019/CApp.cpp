@@ -72,7 +72,10 @@ void CApp::inputProssecing(SDL_Event* Event)
 	}
 	if (board[SDL_SCANCODE_SPACE])
 	{
-		game->CreateBullet();
+		if (game->get_player_1()->get_cooldown() <= 0) {
+ 			game->get_player_1()->set_cooldown(100);
+			game->CreateBullet();
+		}
 	}
 	if(board[SDL_SCANCODE_ESCAPE]){
 		pauseOn = true;
