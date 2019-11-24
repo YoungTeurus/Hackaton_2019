@@ -18,7 +18,7 @@ GameRoom::GameRoom(int i, int j,	// Конструктор комнаты
 	else
 		actors = new vector<GameActor*>(0);
 
-	size = new SDL_Point{ 500, 500 };
+	size = SDL_Point{ 500, 500 };
 }
 
 GameRoom::GameRoom(int i, int j,
@@ -29,7 +29,7 @@ GameRoom::GameRoom(int i, int j,
 	// Загружаем "template" комнаты из определённого RoomTemplate
 	objects = room_templates->get_obj_vector(room_template);
 	actors = room_templates->get_act_vector(room_template);
-	size = room_templates->get_size(room_template);
+	size = *room_templates->get_size(room_template);
 
 	// Если 
 	if (!(objects) || !(actors)) {
@@ -37,6 +37,18 @@ GameRoom::GameRoom(int i, int j,
 	}
 
 	
+}
+
+GameRoom::~GameRoom()
+{
+	delete &size;
+
+	for (auto i = 0; i < actors->size(); i++)
+		delete actors->at(i);
+	for (auto i = 0; i < objects->size(); i++)
+		delete objects->at(i);
+
+	delete room_templates;
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
@@ -57,7 +69,7 @@ int GameRoom::get_j()
 	return map_j;
 }
 
-SDL_Point* GameRoom::get_size()
+SDL_Point GameRoom::get_size()
 {
 	return size;
 }

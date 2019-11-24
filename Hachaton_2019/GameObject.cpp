@@ -1,7 +1,7 @@
 ﻿#include "GameObject.h"
 
 GameObject::GameObject(
-		SDL_Point* spawn_point, // Точка спавна
+		SDL_Point spawn_point, // Точка спавна
 		int width, // ширина модельки
 		int height, // высота модельки
 		bool start_is_looking_right, // В какую сторону объект смотрит изначально (см. ниже)
@@ -11,11 +11,11 @@ GameObject::GameObject(
 		int start_type = 0 // Тип объекта, если нужен
 	){
 	// Задаём объекту координаты и размеры
-	object_rect = new SDL_Rect();
-	object_rect->x = spawn_point->x;
-	object_rect->y = spawn_point->y;
-	object_rect->w = width;
-	object_rect->h = height;
+	object_rect = SDL_Rect{0,0};
+	object_rect.x = spawn_point.x;
+	object_rect.y = spawn_point.y;
+	object_rect.w = width;
+	object_rect.h = height;
 
 	//Задаём объекту свойства
 	is_rotatable = start_is_rotatable;
@@ -29,14 +29,19 @@ GameObject::GameObject(
 	//текстурка обьекта
 	
 	// Инициализируем начальное реальное положение объекта
-	real_x = object_rect->x;
-	real_y = object_rect->y;
+	real_x = object_rect.x;
+	real_y = object_rect.y;
+}
+
+GameObject::~GameObject()
+{
+	delete &object_rect;
 }
 
 void GameObject::convert_pos()
 {
-	object_rect->x = int(real_x);
-	object_rect->y = int(real_y);
+	object_rect.x = int(real_x);
+	object_rect.y = int(real_y);
 }
 
 bool GameObject::move(double delX, double delY)
@@ -74,23 +79,23 @@ bool GameObject::move(int direction)
 
 bool GameObject::on_colision(SDL_Rect* second_rect)
 {
-	if (SDL_HasIntersection(object_rect, second_rect))
+	if (SDL_HasIntersection(&object_rect, second_rect))
 		return true;
 	return false;
 }
 
 
-SDL_Point* GameObject::getCoord()
+SDL_Point GameObject::getCoord()
 {
-	return new SDL_Point{ object_rect->x, object_rect->y };
+	return SDL_Point{ object_rect.x, object_rect.y };
 }
 
-SDL_Point* GameObject::get_size()
+SDL_Point GameObject::get_size()
 {
-	return new SDL_Point{ object_rect->w, object_rect->h };
+	return SDL_Point{ object_rect.w, object_rect.h };
 }
 
-SDL_Rect* GameObject::get_object_rect()
+SDL_Rect GameObject::get_object_rect()
 {
 	return object_rect;
 }

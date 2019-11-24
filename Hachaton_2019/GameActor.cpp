@@ -1,7 +1,7 @@
 ﻿#include "GameActor.h"
 
 
-GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
+GameActor::GameActor(SDL_Point spawn_point, int width, int height,
 	int start_lvl, int start_hp, int start_mp, int start_dmg, bool start_is_looking_right, int start_type) :
 	GameObject(spawn_point, // Вызываю конструктор родителя, передаю ему все необходимые данные
 				width,height,
@@ -17,6 +17,11 @@ GameActor::GameActor(SDL_Point* spawn_point, int width, int height,
 	hp = start_hp;
 	mp = start_mp;
 	dmg = start_dmg;
+}
+
+GameActor::~GameActor()
+{
+	delete &get_object_rect();
 }
 
 int GameActor::get_hp()

@@ -7,7 +7,7 @@ public:
 	// GameObject(); // Конструктор по умолчанию
 
 	GameObject(
-		SDL_Point* spawn_point, // Точка спавна
+		SDL_Point spawn_point, // Точка спавна
 		int width, // ширина модельки
 		int height, // высота модельки
 		bool start_is_looking_right, // В какую сторону объект смотрит изначально (см. ниже)
@@ -16,6 +16,8 @@ public:
 		bool start_is_pushable, // Можно ли толкать объект
 		int start_type // Тип объекта, если нужен
 	);
+
+	~GameObject(); // Деструктор
 
 	//*Управление состоянием*//
 	void			spawn();				// Спавнит объект, делая его активным
@@ -29,9 +31,9 @@ public:
 	//***********************//
 
 	//*******Get-еры*********//
-	SDL_Point*		getCoord();				// Получение координат объекта
-	SDL_Point*		get_size();				// Получение размеров модельки объекта
-	SDL_Rect*		get_object_rect();		// Получение модельки объекта
+	SDL_Point		getCoord();				// Получение координат объекта
+	SDL_Point		get_size();				// Получение размеров модельки объекта
+	SDL_Rect		get_object_rect();		// Получение модельки объекта
 	int				get_type();				// Получение типа объекта
 	bool			get_is_passable();		// Возможно ли пройти сквозь объект? 
 	bool			get_is_pushable();		// Возможно ли токнуть объект ?
@@ -58,7 +60,7 @@ private:
 
 	void			convert_pos();			// Переводим real-ую позицию объекта к ближайшим int-ам для coord
 
-	SDL_Rect*		object_rect;			// Моделька объекта: его координаты и размеры
+	SDL_Rect		object_rect;			// Моделька объекта: его координаты и размеры
 	
 	double			real_x, real_y;			// Действительные координаты объекта
 

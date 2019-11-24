@@ -8,7 +8,7 @@ public:
 	// GameActor(); // Конструктор по умолчанию
 
 	GameActor(								// Конструктор персонажа
-		SDL_Point* spawn_point, // Точка спавна
+		SDL_Point spawn_point, // Точка спавна
 		int width, // ширина модельки
 		int height, // высота модельки
 		int start_lvl, // Начальный уровень
@@ -18,6 +18,8 @@ public:
 		bool start_is_looking_right, // В какую сторону игрок смотрит изначально (см. ниже)
 		int start_type // Тип персонажа
 		);
+
+	~GameActor();
 
 	//*Управление состоянием*//
 	void			attack(GameActor*);		// Атакует переданного персонажа, нанося урон его hp в размере своего dmg

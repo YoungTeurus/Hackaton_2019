@@ -1,6 +1,6 @@
 // ќпредел€ем все типы объектов
 
-#define WALL new SDL_Point{ 0,0 }, 0, 0, false, false, false, false, -1 // —тенка комнаты: "смотрит влево", не нужно вращать, не проходимый, не толкаемый.
+#define WALL SDL_Point{ 0,0 }, 0, 0, false, false, false, false, -1 // —тенка комнаты: "смотрит влево", не нужно вращать, не проходимый, не толкаемый.
 #define PLAYER_ONE 1 // Actor, игрок 1
 #define ROCK 50, 50, true, false, false, false, 2 // Object, повЄрнутый вправо, не нужно вращать, не проходимый, не толкаемый. –азмеры: (50,50)
 #define ROCK_LONG_HORIZONTAL 100, 50, true, false, false, false, 2 // Object, повЄрнутый вправо, не нужно вращать, не проходимый, не толкаемый. –азмеры: (100,50)
