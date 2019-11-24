@@ -123,6 +123,23 @@ void GameObject::setCoord(SDL_Point* pnt)
 }
 
 
+void GameObject::setSpeed(int s)
+{
+	speed = s;
+}
+
+
+void GameObject::setIsPushable(bool p)
+{
+	is_pushable = p;
+}
+
+void GameObject::setIsPassable(bool p)
+{
+	is_passable = p;
+}
+
+
 void GameObject::spawn()
 {
 	is_active = true;

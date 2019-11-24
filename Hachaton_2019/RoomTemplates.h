@@ -31,7 +31,7 @@ public:
 		add_object(temp_obj_vect, new SDL_Point{ 494, 200}, 5, 100, EXIT_RIGHT);
 
 		vector<GameActor*>* temp_act_vect = new vector<GameActor*>();
-		add_actor(temp_act_vect, new SDL_Point{ 250,350 }, 1, 10, 5, 3, true, TEST_ACTOR);
+		add_actor(temp_act_vect, new SDL_Point{ 400,50 }, 1, 10, 5, 3, true, TEST_ACTOR);
 
 		SDL_Point* temp_room_size = new SDL_Point{ 500,500 };
 
@@ -76,8 +76,10 @@ private:
 	}
 
 	void add_actor(vector<GameActor*>* temp_act_vect, SDL_Point* spawn_point,int start_lvl, int start_hp, int start_mp,
-		int start_dmg, bool start_is_looking_right, int w, int h, int start_type) {
+		int start_dmg, bool start_is_looking_right, int w, int h, int start_type, int speed = 4) {
 		GameActor* temp_act = new GameActor(spawn_point, w, h, start_lvl, start_hp, start_mp, start_dmg, start_is_looking_right, start_type);
+		temp_act->setSpeed(2);
+		temp_act->setIsPushable(true);
 		temp_act_vect->push_back(temp_act);
 	}
 };

@@ -1,6 +1,12 @@
 ﻿#include "Game.h"
 #include "RoomTemplates.h"
 
+// Направления движения
+#define UP 0
+#define RIGHT 1
+#define DOWN 2
+#define LEFT 3
+
 Game::Game()
 {
 	SDL_Point* player_spawn_point = new SDL_Point{ 400,400 }; // Точка появления игрока
@@ -22,7 +28,14 @@ GameObject* Game::check_all_collisions(GameObject* object)
 	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
 		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
 		return new GameObject(WALL); // Возвращаем объект с типом "-1"
-
+	
+	// Проверка на столкновение с игроком
+	auto player = get_player_1();
+	if (object != player) {
+		if (SDL_HasIntersection(object->get_object_rect(), player->get_object_rect())) {
+			return player; // объект, с которым пересеклись
+		}
+	}
 	// Проверка на пересечение со всеми объектами в комнате
 	auto obj_vector = get_current_objects();
 	// Обходим все объекты
@@ -34,7 +47,6 @@ GameObject* Game::check_all_collisions(GameObject* object)
 			}
 		}
 	}
-
 	// Проверка на пересечение со всеми персонажами в комнате
 	auto act_vector = get_current_actors();
 	// Обходим всех персонажей
@@ -46,7 +58,6 @@ GameObject* Game::check_all_collisions(GameObject* object)
 			}
 		}
 	}
-
 	return nullptr;
 }
 
@@ -66,6 +77,41 @@ void Game::CreateBullet()
 
 }
 
+void Game::tact(){
+	for(int i = 0 ;i < current_actors->size(); i++){
+		auto cur_actor = current_actors->at(i);
+		if (cur_actor->get_type() == 7){ // Проверка на то, что cur_actor - враг
+			if (getDistance(get_player_1(),cur_actor) < 300){ // Если враг "видит" нас, то он начинает нас преследовать
+				int dx = (get_player_1()->getCoord()->x + get_player_1()->get_size()->x) - (cur_actor->getCoord()->x + cur_actor->get_size()->x);
+				if(dx < 0) // Если игрок левее врага
+					move_gameObject(cur_actor, LEFT);
+				else if (dx > 0) // Если игрок правее врага
+					move_gameObject(cur_actor, RIGHT);
+				int dy = (get_player_1()->getCoord()->y + get_player_1()->get_size()->y) - (cur_actor->getCoord()->y + cur_actor->get_size()->y);
+				if (dy < 0) // Если игрок выше врага
+					move_gameObject(cur_actor, UP);
+				else if (dy > 0) // Если игрок ниже врага
+					move_gameObject(cur_actor, DOWN);
+			}
+			move_gameObject(cur_actor, rand()%4); // Если cur_actor - враг, двигаем его в случайную сторону
+		}
+	}
+}
+
+
+int Game::getDistance(GameObject* obj1, GameObject* obj2)
+{
+	SDL_Rect* obj1_rect = obj1->get_object_rect();
+	SDL_Rect* obj2_rect = obj2->get_object_rect();
+
+	//расстояния по х и у между двумя обь
+	int distanseX = obj2_rect->x + obj2_rect->w / 2 - (obj1_rect->x + obj1_rect->w / 2);
+	int distanseY = obj2_rect->y + obj2_rect->h / 2 - (obj1_rect->y + obj1_rect->h / 2);
+
+	return (sqrt(distanseX * distanseX + distanseY * distanseY));
+}
+
+
 bool Game::move_gameObject(GameObject* object, int direction)
 {
 	object->move(direction);
@@ -76,7 +122,6 @@ bool Game::move_gameObject(GameObject* object, int direction)
 	else if (object_which_collissed->get_is_pushable()) { // либо объект, с которым пересекаемся, разрешено толкать
 		move_gameObject(object_which_collissed, direction);
 		// object_which_collissed->move(direction);
-		
 	}
 	else if (object_which_collissed->get_is_passable()) // либо через объект, с которым пересекаемся, разрешено проходить
 		return true;

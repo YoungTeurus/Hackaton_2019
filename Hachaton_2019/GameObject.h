@@ -40,6 +40,9 @@ public:
 
 	//*******Set-еры*********//
 	void			setCoord(SDL_Point*);	// Установка координат объекта
+	void			setSpeed(int);
+	void			setIsPassable(bool);
+	void			setIsPushable(bool);
 	//***********************//
 	GameTexture* texture;
 
@@ -60,9 +63,9 @@ private:
 	double			real_x, real_y;			// Действительные координаты объекта
 
 	bool			is_active;				// Активен ли в данный момент объект
-
+	bool			is_destroing;			// Разрушается или нет
 	bool			is_looking_right;		// Смотрит ли объект направо
-	bool			is_rotatable;				// Нужно ли отражать текстуру объекта (игрок - да, бочки и камни - нет) при перемещении
+	bool			is_rotatable;			// Нужно ли отражать текстуру объекта (игрок - да, бочки и камни - нет) при перемещении
 	
 	//***Свойства объекта****//
 	bool			is_passable;			// Возможно ли пройти сквозь объект?

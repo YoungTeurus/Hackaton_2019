@@ -3,6 +3,8 @@
 #include "GameActor.h"
 #include "GameObject.h"
 #include "GameRoom.h"
+#include <stdlib.h>
+#include <math.h>
 
 class Game
 {
@@ -15,9 +17,8 @@ public:
 		// 1 (или !false) - есть столкновение с чем-то
 		// другие числа (или !false) - есть столкновение с чем-то особым (например, дверью или сундуком)
 	GameObject*		check_all_collisions(GameObject* object);
-	//двигает игрока, потом проверяет колизии, если столкнулся с чем-то, тогда подвинет обратно
+	// Двигает игрока, потом проверяет колизии, если столкнулся с чем-то, тогда подвинет обратно
 	bool			move_gameObject(GameObject* object, int direction);
-	// TO-DO: Коллизии!
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room
 
@@ -31,7 +32,9 @@ public:
 	//*******Set-еры*********//
 
 	//***********************//
-	void CreateBullet();
+	void			CreateBullet();							// Создаёт новую пулю
+
+	void			tact();									// Проходится по всем actor-ам и двигает их, если они относятся к определённому виду
 
 private:
 	GameActor*		player_1;
@@ -47,6 +50,7 @@ private:
 	// Забираем current_objects и current_actors, чтобы отрисовать их.
 
 	//Map* map; // Указатель на карту подземелья
+	int getDistance(GameObject*, GameObject*);
 
 	GameRoom*		active_room;							// Указатель на активную комнату
 

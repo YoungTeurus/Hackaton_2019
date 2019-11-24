@@ -14,7 +14,7 @@ bool CApp::OnInit() {
 	}
 
 	// Создаём окно
-	if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 4080, 2160, SDL_WINDOW_FULLSCREEN) ) == NULL) {
+	if((Wind_Display = SDL_CreateWindow("Wow", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, 0) ) == NULL) {
         return false;
     }
 	//SDL_SetWindowFullscreen(Wind_Display, SDL_WINDOW_FULLSCREEN);
