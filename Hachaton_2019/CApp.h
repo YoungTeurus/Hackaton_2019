@@ -60,6 +60,8 @@ class CApp {
         void OnRender();
 
         void OnCleanup();
+
+		void inputProssecing(SDL_Event* Event);
 };
 
 //==============================================================================

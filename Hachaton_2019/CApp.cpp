@@ -26,18 +26,10 @@ int CApp::OnExecute() {
     SDL_Event Event;
 
     while(Running) {
-		board = SDL_GetKeyboardState(NULL);
-
-		if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
-			game->get_player_1()->move(0);
-		if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
-			game->get_player_1()->move(2);
-		if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
-			game->get_player_1()->move(3);
-		if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
-			game->get_player_1()->move(1);
+		if (gameOn)
+			inputProssecing(&Event);
         while(SDL_PollEvent(&Event)) {
-            OnEvent(&Event); //тут передаем все изменения от игрока
+            OnEvent(&Event); //тут обрабатываем все события кроме кнопок игрока
         }
 
         OnLoop();//в этой штуке забираем от game все изменения и меняем картинку
@@ -49,6 +41,22 @@ int CApp::OnExecute() {
 
     return 0;
 }
+
+//обработка ввода от игрока
+void CApp::inputProssecing(SDL_Event* Event)
+{
+	board = SDL_GetKeyboardState(NULL);
+
+	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
+		game->get_player_1()->move(0);
+	if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
+		game->get_player_1()->move(2);
+	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
+		game->get_player_1()->move(3);
+	if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
+		game->get_player_1()->move(1);
+}
+
 
 //==============================================================================
 int main(int argc, char* argv[]) {

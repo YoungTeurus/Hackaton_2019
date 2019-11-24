@@ -12,8 +12,6 @@ void CApp::OnEvent(SDL_Event* Event)
 {
 	if (Event->type == SDL_QUIT)
 		Running = false;
-
-
 	switch (MenuState)
 	{
 	case 0: MenuState = menu.Update(Event, Renderer_Display); break;
@@ -31,7 +29,7 @@ void CApp::OnEvent(SDL_Event* Event)
 		/*
 		case(SDL_KEYDOWN): // нажата клавиша
 		{
-		
+			
 			}//break;
 		//нажата клавиша мыши
 		case(SDL_MOUSEBUTTONDOWN): break;
