@@ -32,28 +32,8 @@ int CApp::OnExecute() {
     SDL_Event Event;
 
     while(Running) {
-		board = SDL_GetKeyboardState(NULL);
-
-		if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
-		{
-			game->get_player_1()->move(0);
-			texturePlayer.SetAnimationDoroshka(1);
-		}
-		if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
-		{
-			game->get_player_1()->move(2);
-			texturePlayer.SetAnimationDoroshka(3);
-		}
-		if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
-		{
-			game->get_player_1()->move(3);
-			texturePlayer.SetAnimationDoroshka(2);
-		}
-		if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
-		{
-			game->get_player_1()->move(1);
-			texturePlayer.SetAnimationDoroshka(4);
-		}
+		if (gameOn)
+			inputProssecing(&Event);
         while(SDL_PollEvent(&Event)) {
             OnEvent(&Event); //тут обрабатываем все события кроме кнопок игрока
         }
@@ -74,14 +54,22 @@ void CApp::inputProssecing(SDL_Event* Event)
 {
 	board = SDL_GetKeyboardState(NULL);
 
-	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP])
+	if (board[SDL_SCANCODE_W] || board[SDL_SCANCODE_UP]) {
 		game->move_gameActor(game->get_player_1(), UP);
-	if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN])
+		texturePlayer.SetAnimationDoroshka(1);
+	}
+	if (board[SDL_SCANCODE_S] || board[SDL_SCANCODE_DOWN]) {
 		game->move_gameActor(game->get_player_1(), DOWN);
-	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT])
+		texturePlayer.SetAnimationDoroshka(3);
+	}
+	if (board[SDL_SCANCODE_A] || board[SDL_SCANCODE_LEFT]){
 		game->move_gameActor(game->get_player_1(), LEFT);
-	if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT])
+		texturePlayer.SetAnimationDoroshka(2);
+	}
+	if (board[SDL_SCANCODE_D] || board[SDL_SCANCODE_RIGHT]) {
 		game->move_gameActor(game->get_player_1(), RIGHT);
+		texturePlayer.SetAnimationDoroshka(4);
+	}
 }
 
 
