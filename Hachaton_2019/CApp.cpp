@@ -17,7 +17,7 @@ CApp::CApp() {
 	game = NULL;
 	menuOn = true;
 	gameOn = false;
-
+	pauseOn = false;
 	MenuState = 0;
 
     Running = true;
@@ -72,6 +72,7 @@ void CApp::inputProssecing(SDL_Event* Event)
 	}
 	if(board[SDL_SCANCODE_ESCAPE]){
 		pauseOn = true;
+		Running = false;//временно
 	}
 }
 

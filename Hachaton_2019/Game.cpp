@@ -13,7 +13,7 @@ Game::Game()
 	current_objects = nullptr;
 }
 
-int Game::check_all_collisions(GameObject* object)
+GameObject* Game::check_all_collisions(GameObject* object)
 {
 	// Проверка на пересечение со всеми объектами в комнате
 	auto obj_vector = get_current_objects();
@@ -22,7 +22,7 @@ int Game::check_all_collisions(GameObject* object)
 		GameObject* current_obj = obj_vector->at(i); // Текущий объект, с которым ведётся сравнение
 		if (current_obj != object) { // Проверяем, чтобы этот объект не является самим первым объектом
 			if (SDL_HasIntersection(object->get_object_rect(), current_obj->get_object_rect())) {
-				return current_obj->get_type(); // Возвращаем тип объекта, с которым пересеклись
+				return current_obj; // объект, с которым пересеклись
 			}
 		}
 	}
@@ -34,7 +34,7 @@ int Game::check_all_collisions(GameObject* object)
 		GameObject* current_act = act_vector->at(i); // Текущий объект, с которым ведётся сравнение
 		if (current_act != object) { // Проверяем, чтобы этот объект не является самим первым объектом
 			if (SDL_HasIntersection(object->get_object_rect(), current_act->get_object_rect())) {
-				return current_act->get_type(); // Возвращаем тип объекта, с которым пересеклись
+				return current_act; // Возвращаем объект, с которым пересеклись
 			}
 		}
 	}
@@ -43,20 +43,15 @@ int Game::check_all_collisions(GameObject* object)
 	auto obj_rect = object->get_object_rect();
 	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
 		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
-		return -1;
+		return new GameObject();
 
-	return 0;
+	return nullptr;
 }
 
 void Game::load_test_room()
 {
 	active_room = new GameRoom(1, 1, 0);
 	auto player = get_player_1();
-	
-	//auto spawn_player = new SDL_Point();
-	//spawn_player->x = 354;
-	//spawn_player->y = 230;
-	//player->setCoord(spawn_player);
 	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();
 }

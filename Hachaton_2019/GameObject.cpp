@@ -50,11 +50,7 @@ bool GameObject::move(double delX, double delY)
 	real_x += delX;
 	real_y += delY;
 	convert_pos();
-
-	// Проверяем на коллижены
-	// Если с чем-то столкнулись, то возвращаемся обратно
-	auto collision_result = 1;
-
+	
 	// Считаем, что увеличение X - движение вправо
 	if (delX >= 0)
 		is_looking_right = true;
