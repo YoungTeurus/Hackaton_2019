@@ -53,7 +53,7 @@ void CApp::OnRender() {
 			// Отрисоываем actor-игрока
 			if (game->get_player_1()) {
 				auto player = game->get_player_1();
-				texturePlayer.DrawTexture(Renderer_Display);
+				// texturePlayer.DrawTexture(Renderer_Display); Отрисовываем рогалик
 				SDL_Point* rect_pos = player->getCoord();
 				SDL_Point* rect_size = player->get_size();
 				SDL_SetRenderDrawColor(Renderer_Display, 0, 250, 250, 255);

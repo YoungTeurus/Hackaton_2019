@@ -5,8 +5,8 @@
 void CApp::OnLoop() {
 	if (game) {
 		//получаем смещение игрока
-		texturePlayer.InGame.x = game->get_player_1()->getCoord()->x;
-		texturePlayer.InGame.y = game->get_player_1()->getCoord()->y;
+		// texturePlayer.InGame.x = game->get_player_1()->getCoord()->x;
+		// texturePlayer.InGame.y = game->get_player_1()->getCoord()->y;
 	}
 }
 
