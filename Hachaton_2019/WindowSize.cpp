@@ -23,6 +23,9 @@ void WindowSize::Init(SDL_Window* win)
 
 SDL_Rect WindowSize::Mashtab(SDL_Rect* BaseInGame)
 {
-	SDL_Rect tmp = { BaseInGame->x* WindowSize::Koef,BaseInGame->y* WindowSize::Koef,BaseInGame->w* WindowSize::Koef,BaseInGame->h* WindowSize::Koef };
+	SDL_Rect tmp = { int(BaseInGame->x * WindowSize::Koef),
+		int(BaseInGame->y * WindowSize::Koef),
+		int(BaseInGame->w * WindowSize::Koef),
+		int(BaseInGame->h * WindowSize::Koef)};
 	return tmp;
 }
