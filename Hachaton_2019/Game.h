@@ -3,6 +3,7 @@
 #include "GameActor.h"
 #include "GameObject.h"
 #include "GameRoom.h"
+#include "GameMap.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -51,8 +52,12 @@ private:
 	// а все draw в методе onRender
 	// Забираем current_objects и current_actors, чтобы отрисовать их.
 
-	//Map* map; // Указатель на карту подземелья
+	// Функции класса
 	double			getDistance(GameObject*, GameObject*);	// Возвращает расстояние между двумя объектами
+
+	// Данные класса
+
+	Map* map; // Указатель на карту подземелья
 
 	GameRoom*		active_room;							// Указатель на активную комнату
 

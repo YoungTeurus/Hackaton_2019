@@ -9,7 +9,7 @@
 
 Game::Game()
 {
-	SDL_Point player_spawn_point{ 400,400 }; // Точка появления игрока
+	SDL_Point player_spawn_point{ 0,0 }; // Точка появления игрока
 	SDL_Point player_size{45, 45}; // Размеры игрока
 	player_1 = new GameActor(player_spawn_point, player_size.x, player_size.y,
 		0, 10, 10, 5, true, 1); // Создаём объект-персонаж типа "1" - первый игрок
@@ -19,6 +19,9 @@ Game::Game()
 	current_actors = nullptr;
 
 	current_objects = nullptr;
+
+	map = new Map(10);
+	map->Gen();
 }
 
 Game::~Game()
@@ -68,7 +71,8 @@ GameObject* Game::check_all_collisions(GameObject* object)
 
 void Game::load_test_room()
 {
-	active_room = new GameRoom(1, 1, 0);
+	//active_room = new GameRoom(1, 1, 0);
+	active_room = map->matrix[5][5];
 	auto player = get_player_1();
 	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();

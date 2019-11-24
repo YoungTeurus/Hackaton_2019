@@ -41,14 +41,14 @@ GameRoom::GameRoom(int i, int j,
 
 GameRoom::~GameRoom()
 {
-	delete &size;
+	//delete &size;
 
-	for (auto i = 0; i < actors->size(); i++)
-		delete actors->at(i);
-	for (auto i = 0; i < objects->size(); i++)
-		delete objects->at(i);
+	//for (auto i = 0; i < actors->size(); i++)
+	//	delete actors->at(i);
+	//for (auto i = 0; i < objects->size(); i++)
+	//	delete objects->at(i);
 
-	delete room_templates;
+	//delete room_templates;
 }
 
 void GameRoom::add_object(GameObject* obj_to_add) {
