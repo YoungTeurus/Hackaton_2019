@@ -62,9 +62,10 @@ void CApp::OnRender() {
 				SDL_SetRenderDrawColor(Renderer_Display, 0, 0, 0, 255);
 			}
 		}
+		texturePlayer.DrawAnimationTexture(Renderer_Display);
 	}
 	SDL_RenderPresent(Renderer_Display);
-	SDL_RenderClear(Renderer_Display);
+	
 }
 
 //==============================================================================

@@ -19,6 +19,9 @@
     <Filter Include="Исходные файлы\Menu">
       <UniqueIdentifier>{dfd6a373-473e-4103-bb82-570494edb58b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Texture and animation">
+      <UniqueIdentifier>{07cee396-419e-45d4-9151-88e4f17f9f20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CApp.cpp">
@@ -54,17 +57,20 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Исходные файлы\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Исходные файлы\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="WindowSize.cpp">
-      <Filter>Исходные файлы\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="CSurface.cpp">
       <Filter>Исходные файлы\Menu</Filter>
     </ClCompile>
     <ClCompile Include="GameRoom.cpp">
       <Filter>Исходные файлы\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы\Texture and animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CSurface.cpp">
+      <Filter>Исходные файлы\Texture and animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTexture.cpp">
+      <Filter>Исходные файлы\Texture and animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,14 +95,23 @@
     <ClInclude Include="resource.h">
       <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Исходные файлы\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="WindowSize.h">
       <Filter>Исходные файлы\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="GameRoom.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomTemplates.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Исходные файлы\Texture and animation</Filter>
+    </ClInclude>
     <ClInclude Include="CSurface.h">
-      <Filter>Исходные файлы\Menu</Filter>
+      <Filter>Исходные файлы\Texture and animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTexture.h">
+      <Filter>Исходные файлы\Texture and animation</Filter>
     </ClInclude>
     <ClInclude Include="Windowr.h">
       <Filter>Исходные файлы</Filter>
@@ -107,6 +122,9 @@
     <ClInclude Include="RoomTemplates.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

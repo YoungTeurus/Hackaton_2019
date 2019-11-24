@@ -9,8 +9,11 @@
 #include <SDL_image.h>
 #include "CSurface.h"
 #include "Menu.h"
-#include "Windowr.h"
+#include "WindowSize.h"
 #include <Windows.h>
+#include "AnimationTexture.h"
+typedef SDL_Texture Picter; // более понятный тип данных
+
 
 //==============================================================================
 class CApp {
@@ -38,10 +41,11 @@ class CApp {
 		// и отрисовать в onrender
 		// когда выходим из програмки обязательно их удаляем 
 
-		//хранит фаил с картинкой
-		SDL_Texture* picturePlayer;
+		//хранит фаил с картинкой (picter == sdl_texture)
+		Picter* picturePlayer;
+		Picter* AnimPicturePlayer;
 		//сама текстурка игрока с размерами и положением
-		Texture texturePlayer;
+		AnimationTexture texturePlayer;
 
 		int MenuState = 0; // Состояние меню: 0 - ничего не нажато, 1-3 - нажаты кнопки с первой по третью
 

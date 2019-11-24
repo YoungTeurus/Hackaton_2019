@@ -44,5 +44,5 @@ void Texture::DrawTexture(SDL_Renderer* ren)
 {
 	if (InPicter.w == 0)
 		SDL_RenderCopy(ren, _texture, NULL, &InGame);
-	else SDL_RenderCopy(ren, _texture, &InPicter, &InGame);
+	else SDL_RenderCopy(ren, _texture, &InPicter, &WindowSize::Mashtab(&InGame));
 }
