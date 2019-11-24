@@ -49,17 +49,6 @@ void GameActor::set_dmg(int dmg_)
 	dmg = dmg_;
 }
 
-bool GameActor::move(int direction)
-{
-	switch(direction){
-	case 0: return GameObject::move(0,-speed);  break; // Движение вверх
-	case 1: return GameObject::move(speed,0);  break; // Движение вправо
-	case 2: return GameObject::move(0,speed); break; // Движение вниз
-	case 3: return GameObject::move(-speed,0); break; // Движение влево
-	default: return false;
-	}
-}
-
 void GameActor::attack(GameActor* defencer)
 {
 	defencer->set_hp(defencer->get_hp() - dmg); // Уменьшаем у защитника жизни на dmg

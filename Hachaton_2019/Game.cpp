@@ -1,4 +1,5 @@
 ﻿#include "Game.h"
+#include "RoomTemplates.h"
 
 Game::Game()
 {
@@ -16,6 +17,12 @@ Game::Game()
 
 GameObject* Game::check_all_collisions(GameObject* object)
 {
+	// Проверяем столкновение с границами комнаты
+	auto obj_rect = object->get_object_rect();
+	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
+		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
+		return new GameObject(WALL); // Возвращаем объект с типом "-1"
+
 	// Проверка на пересечение со всеми объектами в комнате
 	auto obj_vector = get_current_objects();
 	// Обходим все объекты
@@ -35,16 +42,10 @@ GameObject* Game::check_all_collisions(GameObject* object)
 		GameObject* current_act = act_vector->at(i); // Текущий объект, с которым ведётся сравнение
 		if (current_act != object) { // Проверяем, чтобы этот объект не является самим первым объектом
 			if (SDL_HasIntersection(object->get_object_rect(), current_act->get_object_rect())) {
-				return current_act; // Возвращаем объект, с которым пересеклись
+				return current_act; // Возвращаем персонажа, с которым пересеклись
 			}
 		}
 	}
-
-	// Проверяем столкновение с границами комнаты
-	auto obj_rect = object->get_object_rect();
-	if (obj_rect->x < 0 || obj_rect->x + obj_rect->w > active_room->get_size()->x ||
-		obj_rect->y < 0 || obj_rect->y + obj_rect->h > active_room->get_size()->y)
-		return new GameObject(new SDL_Point{ 0,0 }, 0, 0, false, false, false, false, -1);
 
 	return nullptr;
 }
@@ -58,12 +59,20 @@ void Game::load_test_room()
 }
 
 
-bool Game::move_gameActor(GameActor* actor, int direction)
+bool Game::move_gameObject(GameObject* object, int direction)
 {
-	actor->move(direction);
-	GameObject* object_which_collissed = check_all_collisions(actor);
-	if (!object_which_collissed)
+	object->move(direction);
+	GameObject* object_which_collissed = check_all_collisions(object);
+	// Игрок не останавливается, 
+	if (!object_which_collissed) // если не пересекаемся ни с одним объектом
 		return true;
-	actor->move((direction+2)%4);
+	else if (object_which_collissed->get_is_pushable()) { // либо объект, с которым пересекаемся, разрешено толкать
+		move_gameObject(object_which_collissed, direction);
+		// object_which_collissed->move(direction);
+		
+	}
+	else if (object_which_collissed->get_is_passable()) // либо через объект, с которым пересекаемся, разрешено проходить
+		return true;
+	object->move((direction+2)%4);
 	return true;
 }
