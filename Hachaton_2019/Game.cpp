@@ -9,7 +9,7 @@
 
 Game::Game()
 {
-	SDL_Point player_spawn_point{ 400,400 }; // Точка появления игрока
+	SDL_Point player_spawn_point{ 0,0 }; // Точка появления игрока
 	SDL_Point player_size{45, 45}; // Размеры игрока
 	player_1 = new GameActor(player_spawn_point, player_size.x, player_size.y,
 		0, 10, 10, 5, true, 1); // Создаём объект-персонаж типа "1" - первый игрок
@@ -19,6 +19,9 @@ Game::Game()
 	current_actors = nullptr;
 
 	current_objects = nullptr;
+
+	map = new Map(10);
+	map->Gen();
 }
 
 Game::~Game()
@@ -68,10 +71,18 @@ GameObject* Game::check_all_collisions(GameObject* object)
 
 void Game::load_test_room()
 {
-	active_room = new GameRoom(1, 1, 0);
+	//active_room = new GameRoom(1, 1, 0);
+	active_room = map->matrix[5][6];
 	auto player = get_player_1();
 	current_actors = active_room->get_actors();
 	current_objects = active_room->get_objects();
+}
+
+void Game::load_room(int i, int j)
+{
+	active_room = map->matrix[i][j];
+	current_actors = map->matrix[i][j]->get_actors();
+	current_objects = map->matrix[i][j]->get_objects();
 }
 
 void Game::CreateBullet()
@@ -139,6 +150,28 @@ bool Game::move_gameObject(GameObject* object, int direction)
 	if (!object_which_collissed) { // если не пересекаемся ни с одним объектом
 		return true;
 	}
+	// Тестовая проверка на двери
+	else if (object == get_player_1() && object_which_collissed->get_type() == 50) { // Дверь вверх
+		load_room(active_room->get_i() - 1, active_room->get_j());
+		//active_room = map->matrix[active_room->get_i() - 1][active_room->get_j()];
+		get_player_1()->setCoord(new SDL_Point{0,0});
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 51) { // Дверь вправо
+		load_room(active_room->get_i(), active_room->get_j()+1);
+		//active_room = map->matrix[active_room->get_i()][active_room->get_j() + 1];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 52) { // Дверь вниз
+		load_room(active_room->get_i() + 1, active_room->get_j());
+		//active_room = map->matrix[active_room->get_i() + 1][active_room->get_j()];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	else if (object == get_player_1() && object_which_collissed->get_type() == 53) { // Дверь влево
+		load_room(active_room->get_i(), active_room->get_j()-1);
+		//active_room = map->matrix[active_room->get_i()][active_room->get_j() - 1];
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+	}
+	//
 	else if (object_which_collissed->get_is_pushable()) { // либо объект, с которым пересекаемся, разрешено толкать
 		move_gameObject(object_which_collissed, direction);
 		// object_which_collissed->move(direction);

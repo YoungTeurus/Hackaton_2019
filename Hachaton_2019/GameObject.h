@@ -53,7 +53,7 @@ public:
 	//***********************//
 	GameTexture* texture;
 
-	void SetTexture(const char*);
+	void settexture(int type);
 private:
 
 	int				type;					//Уникальный тип объекта, требуемый для различения объектов, их отрисовки и всего в этом духе

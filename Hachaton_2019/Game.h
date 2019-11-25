@@ -3,6 +3,7 @@
 #include "GameActor.h"
 #include "GameObject.h"
 #include "GameRoom.h"
+#include "GameMap.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -23,6 +24,7 @@ public:
 	bool			move_gameObject(GameObject* object, int direction);
 	
 	void			load_test_room();						// Загружает тестовую комнату в active_room
+	void			load_room(int i, int j);				// Загружает комнату map->matrix[i][j] в active_room
 
 	//*******Get-еры*********//
 	GameActor*		get_player_1() { return player_1; }		// Возвращает первого игрока
@@ -51,8 +53,12 @@ private:
 	// а все draw в методе onRender
 	// Забираем current_objects и current_actors, чтобы отрисовать их.
 
-	//Map* map; // Указатель на карту подземелья
+	// Функции класса
 	double			getDistance(GameObject*, GameObject*);	// Возвращает расстояние между двумя объектами
+
+	// Данные класса
+
+	Map* map; // Указатель на карту подземелья
 
 	GameRoom*		active_room;							// Указатель на активную комнату
 
