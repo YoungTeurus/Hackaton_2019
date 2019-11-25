@@ -123,7 +123,7 @@ void Game::tact(){
 				else if (dy > 0) // Если игрок ниже врага
 					move_gameObject(cur_actor, DOWN);
 			}
-			//move_gameObject(cur_actor, rand()%4); // Если cur_actor - враг, двигаем его в случайную сторону
+			move_gameObject(cur_actor, rand()%4); // Если cur_actor - враг, двигаем его в случайную сторону
 		}
 	}
 }
@@ -154,22 +154,26 @@ bool Game::move_gameObject(GameObject* object, int direction)
 	else if (object == get_player_1() && object_which_collissed->get_type() == 50) { // Дверь вверх
 		load_room(active_room->get_i() - 1, active_room->get_j());
 		//active_room = map->matrix[active_room->get_i() - 1][active_room->get_j()];
-		get_player_1()->setCoord(new SDL_Point{0,0});
+		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+		//get_player_1()->setCoord(new SDL_Point{ active_room->get_size().x / 2, active_room->get_size().y - get_player_1()->get_size().y - 15 });
 	}
 	else if (object == get_player_1() && object_which_collissed->get_type() == 51) { // Дверь вправо
 		load_room(active_room->get_i(), active_room->get_j()+1);
 		//active_room = map->matrix[active_room->get_i()][active_room->get_j() + 1];
 		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+		//get_player_1()->setCoord(new SDL_Point{ 0, active_room->get_size().y/2 });
 	}
 	else if (object == get_player_1() && object_which_collissed->get_type() == 52) { // Дверь вниз
 		load_room(active_room->get_i() + 1, active_room->get_j());
 		//active_room = map->matrix[active_room->get_i() + 1][active_room->get_j()];
 		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+		//get_player_1()->setCoord(new SDL_Point{ active_room->get_size().x / 2, 15});
 	}
 	else if (object == get_player_1() && object_which_collissed->get_type() == 53) { // Дверь влево
 		load_room(active_room->get_i(), active_room->get_j()-1);
 		//active_room = map->matrix[active_room->get_i()][active_room->get_j() - 1];
 		get_player_1()->setCoord(new SDL_Point{ 0,0 });
+		//get_player_1()->setCoord(new SDL_Point{ active_room->get_size().x - get_player_1()->get_size().x, active_room->get_size().y/2 });
 	}
 	//
 	else if (object_which_collissed->get_is_pushable()) { // либо объект, с которым пересекаемся, разрешено толкать
