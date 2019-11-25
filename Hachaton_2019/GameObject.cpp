@@ -125,6 +125,19 @@ bool GameObject::get_direction()
 	return is_looking_right;
 }
 
+
+int GameObject::getStatus()
+{
+	return status;
+}
+
+
+void GameObject::setStatus(int s)
+{
+	status = static_cast<Status>(s);
+}
+
+
 void GameObject::set_type(int tip)
 {
 	type = tip;

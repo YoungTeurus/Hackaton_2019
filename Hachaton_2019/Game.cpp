@@ -93,17 +93,26 @@ void Game::tact(){
 		if (cur_actor->get_type() == 7){ // Проверка на то, что cur_actor - враг
 			if (getDistance(get_player_1(),cur_actor) < 300){ // Если враг "видит" нас, то он начинает нас преследовать
 				int dx = (get_player_1()->getCoord().x + get_player_1()->get_size().x) - (cur_actor->getCoord().x + cur_actor->get_size().x);
-				if(dx < 0) // Если игрок левее врага
-					move_gameObject(cur_actor, LEFT);
+				if (dx < 0) // Если игрок левее врага
+				{
+					if (!move_gameObject(cur_actor, LEFT))
+						if (!move_gameObject(cur_actor, (rand() % 2 == 1) ? 2 : 0))
+							move_gameObject(cur_actor, RIGHT);
+				}
+				
 				else if (dx > 0) // Если игрок правее врага
-					move_gameObject(cur_actor, RIGHT);
+				{
+					if (!move_gameObject(cur_actor, RIGHT))
+						if (!move_gameObject(cur_actor, (rand() % 2 == 1) ? 2 : 0))
+							move_gameObject(cur_actor, LEFT);
+				}
 				int dy = (get_player_1()->getCoord().y + get_player_1()->get_size().y) - (cur_actor->getCoord().y + cur_actor->get_size().y);
 				if (dy < 0) // Если игрок выше врага
 					move_gameObject(cur_actor, UP);
 				else if (dy > 0) // Если игрок ниже врага
 					move_gameObject(cur_actor, DOWN);
 			}
-			move_gameObject(cur_actor, rand()%4); // Если cur_actor - враг, двигаем его в случайную сторону
+			//move_gameObject(cur_actor, rand()%4); // Если cur_actor - враг, двигаем его в случайную сторону
 		}
 	}
 }
